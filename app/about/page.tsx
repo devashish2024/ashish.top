@@ -66,10 +66,10 @@ export default function Page() {
           Books, go ahead and buy them now! 📚
         </p>
         <p className="text-lg">
-          So far, this is a damn, un-believable list of achievements for a
-          13-year old kid like me. I'm proud of myself and my parents are proud
-          of me too. I'm looking forward to learning more and building more
-          amazing projects in the future. 👏
+          So far, this is a incredible list of achievements for a 13-year old
+          kid like me. I'm proud of myself and my parents are proud of me too.
+          I'm looking forward to learning more and building more amazing
+          projects in the future. 👏
         </p>
         <p className="text-lg">
           This is still not the end. I'm still learning and actively applying
