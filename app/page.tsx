@@ -69,81 +69,40 @@ export default function Page() {
         </p>
 
         <div className="flex gap-4">
-          <Link
-            href="/about"
-            className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
-          >
-            About me{" "}
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 12H3"
-                className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="/sign"
-            className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
-          >
-            Sign my guestbook{" "}
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 12H3"
-                className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="/contact"
-            className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
-          >
-            Contact me{" "}
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 12H3"
-                className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
-              />
-            </svg>
-          </Link>
+          {[
+            { href: "/about", label: "About me" },
+            { href: "/sign", label: "Sign my guestbook" },
+            { href: "/contact", label: "Contact me" },
+          ].map((link) => {
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
+              >
+                {link.label}{" "}
+                <svg
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="transition-all duration-75 inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 12H3"
+                    className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
+                  />
+                </svg>
+              </Link>
+            );
+          })}
         </div>
       </div>
 
