@@ -41,7 +41,6 @@ const featuredInterviews = [
 export default function Page() {
   return (
     <div className="container px-4 mb-12 md:mt-8 space-y-12 min-h-screen">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"></div>
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
           <Image
@@ -56,18 +55,19 @@ export default function Page() {
           </div>
         </div>
         <p className="text-lg">
-          Welcome to my personal, new portfolio! 🌟 Here you'll find information
-          about my projects, interests, and more. Feel free to explore and
-          connect with me on social media. 🌐
+          Welcome to my brand-new portfolio! 🌟 Here, you can discover details
+          about my projects, interests, and achievements. Feel free to explore
+          and connect with me on social media to stay updated! 🌐✨
         </p>
         <p className="text-lg">
-          I'm a young software engineer with a passion for building web
-          applications. I've been interviewed multiple times and featured in
-          various magazines, articles, and news channels due to my skills at
-          such a young age. I'm also given the title "computer boy aligarh" by
-          the social media and news channels that you can search on Google to
-          find out most of my interviews. 🚀
+          I'm a young and passionate software engineer with a knack for building
+          innovative web applications. Over the years, I've been recognized for
+          my skills and dedication, earning features in magazines, articles, and
+          news channels. The media has even honored me with the title "computer
+          boy of Aligarh." Search me on Google by my title to find more about my
+          journey and interviews! 🚀
         </p>
+
         <div className="flex gap-4">
           <Link
             href="/about"
