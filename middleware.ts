@@ -12,6 +12,8 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL("/interviews", request.url));
     case "/guestbook":
       return NextResponse.redirect(new URL("/sign", request.url));
+    case "/s/v1":
+      return NextResponse.redirect("https://v1.ashish.top");
     case "/s/gh":
       return NextResponse.redirect("https://github.com/devashish2024");
     case "/s/gh2":
@@ -34,7 +36,8 @@ export const config = {
     "/highlights", // redirect old routes to new ones
     "/guestbook", // redirect old routes to new ones
 
-    // social links
+    // social and short links
+    "/s/v1", // short link to old portfolio
     "/s/gh",
     "/s/gh2",
     "/s/dc",
