@@ -56,9 +56,10 @@ export default function Page() {
         </p>
         <p className="text-lg">
           I've also contributed to some large projects which involve a large
-          scale of community. Supercord, a verified discord bot. ClickCrystals,
-          a minecraft mod with over 150k+ downloads and 4k+ discord community.
-          I've also contributed to many more projects privately as well. ️‍🔥
+          scale of community. Supercord, a verified discord bot with over 75+
+          guilds installed and 15k+ users. ClickCrystals, a minecraft mod with
+          over 150k+ downloads and 4k+ discord community. I've also contributed
+          to many more projects privately as well. ️‍🔥
         </p>
         <p className="text-lg">
           Last but not least, I've also authored a total of 9 books related to
@@ -66,10 +67,10 @@ export default function Page() {
           Books, go ahead and buy them now! 📚
         </p>
         <p className="text-lg">
-          So far, this is a incredible list of achievements for a 13-year old
-          kid like me. I'm proud of myself and my parents are proud of me too.
-          I'm looking forward to learning more and building more amazing
-          projects in the future. 👏
+          So far, this is a damn, un-believable list of achievements for a
+          13-year old kid like me. I'm proud of myself and my parents are proud
+          of me too. I'm looking forward to learning more and building more
+          amazing projects in the future. 🚀
         </p>
         <p className="text-lg">
           This is still not the end. I'm still learning and actively applying
