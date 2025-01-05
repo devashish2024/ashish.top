@@ -21,7 +21,7 @@ const projects = [
     summary:
       "A verified, fun and general-purpose discord bot and alternative to Dank Memer with 100+ servers and 15k+ users.",
     image: "/assets/projects/supercord.png",
-    category: ["Contributions", "Discord Bots"],
+    category: ["Contributions", "Discord Bots", "Python"],
   },
   {
     slug: "portfolio-v1",
@@ -30,6 +30,22 @@ const projects = [
       "First version of my personal portfolio website built with Next.js, TailwindCSS and Framer Motion.",
     image: "/assets/projects/portfolio-v1.png",
     category: ["Next.js", "Web Development"],
+  },
+  {
+    slug: "musicmaster",
+    title: "MusicMaster Landing Page",
+    summary:
+      "Another landing page built with Next.js, Framer Motion and TailwindCSS. This project was a task for the internship application at Beyondriffs.",
+    image: "/assets/projects/musicmaster.png",
+    category: ["Web Development", "Next.js"],
+  },
+  {
+    slug: "periodic-table",
+    title: "Periodic Table Visualizer & SVG generator",
+    summary:
+      "A periodic table visualizer and SVG generator. Firstly generate the SVGs of each element using Python with svgwrite, then visualize them using HTML, CSS and JS.",
+    image: "/assets/projects/periodictable.png",
+    category: ["Web Development", "Python"],
   },
 ];
 
