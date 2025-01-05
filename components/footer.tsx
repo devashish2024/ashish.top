@@ -12,19 +12,19 @@ export default async function Footer() {
         <Link className="text-primary text-xl font-semibold font-mono" href="/">
           {"<Ashish />"}
         </Link>
-        <p className="text-xs text-center">
+        <p className="font-serif text-xs text-center">
           &copy; 2022-{currentYear} Ashish Agarwal
           <br />
           <Link
             href="https://github.com/devashish2024/ashish.top"
             target="_blank"
-            className="hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
+            className="font-serif hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
           >
             Open-source portfolio.
           </Link>
         </p>
         <Link
-          className="flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
+          className="font-serif flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
           href="https://github.com/devashish2024/ashish.top"
           target="_blank"
         >
