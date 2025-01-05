@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "./footer";
 import Header from "./header";
 
 import { ThemeProvider } from "next-themes";
@@ -12,7 +13,8 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
       disableTransitionOnChange
     >
       <Header />
-      <main className="container">{children}</main>
+      <main className="container min-h-screen">{children}</main>
+      <Footer />
     </ThemeProvider>
   );
 };

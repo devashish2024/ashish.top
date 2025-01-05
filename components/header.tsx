@@ -16,7 +16,7 @@ import {
 import { Separator } from "./ui/separator";
 import { useState } from "react";
 
-const links = [
+export const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
