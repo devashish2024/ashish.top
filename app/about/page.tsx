@@ -1,3 +1,4 @@
+import Skills from "@/components/skills";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -23,6 +24,7 @@ export default function Page() {
         </BreadcrumbList>
       </Breadcrumb>
       <div className="space-y-4">
+        <Skills />
         <p className="text-lg">
           Hi there! 👋 I'm Ashish Agarwal, a 13-year-old self-taught and
           accomplished web developer from Aligarh, India. Currently a class 8th

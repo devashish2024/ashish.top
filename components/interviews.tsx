@@ -22,8 +22,9 @@ export default function InterviewList({ interviews }: InterviewListProps) {
                   draggable={false}
                   src={`https://img.youtube.com/vi/${interview.split("v=")[1]}/0.jpg`}
                   alt="Interview"
-                  layout="fill"
-                  objectFit="cover"
+                  width={1280}
+                  height={720}
+                  className="w-full object-cover h-full"
                 />
               </Halo>
             </div>
