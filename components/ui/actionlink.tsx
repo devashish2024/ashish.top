@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 export default function ActionLink({
   label,
@@ -13,10 +14,10 @@ export default function ActionLink({
     <Link
       href={href}
       target={href.startsWith("/") || href === "#" ? undefined : "_blank"}
-      className={
-        "justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-900 dark:text-gray-300 underline-offset-4 hover:underline " +
-        className
-      }
+      className={twMerge(
+        "justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-900 dark:text-gray-300 underline-offset-4 hover:underline",
+        className,
+      )}
     >
       {label}{" "}
       <svg
