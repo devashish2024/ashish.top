@@ -16,7 +16,7 @@ export default function Page() {
         <p className="mt-2 mb-6">
           Click a project to view all skills involved and a detailed info.
         </p>
-        <ProjectList projects={projects} />
+        <ProjectList projects={projects} showSearch />
       </section>
     </div>
   );

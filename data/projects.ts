@@ -5,6 +5,7 @@ const projects = [
     summary:
       "Full-stack next.js website for a popular minecraft mod, built with Next.js, Framer Motion, TailwindCSS, Postgres, Prisma and NextAuth.",
     image: "/assets/projects/clickcrystals.png",
+    category: ["Web Development"],
   },
   {
     slug: "supercord",
@@ -12,6 +13,7 @@ const projects = [
     summary:
       "A verified, fun and general-purpose discord bot and alternative to Dank Memer with 100+ servers and 15k+ users.",
     image: "/assets/projects/supercord.png",
+    category: ["Discord Bots"],
   },
   {
     slug: "portfolio-v1",
@@ -19,6 +21,7 @@ const projects = [
     summary:
       "First version of my personal portfolio website built with Next.js, TailwindCSS and Framer Motion.",
     image: "/assets/projects/portfolio-v1.png",
+    category: ["Web Development"],
   },
 ];
 
