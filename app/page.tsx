@@ -47,6 +47,7 @@ export default function Page() {
           <Image
             src={avatarImage}
             alt="Avatar"
+            priority
             className="size-16 rounded-full ring ring-primary"
           />
           <div className="font-serif">
