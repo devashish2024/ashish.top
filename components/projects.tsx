@@ -13,14 +13,7 @@ import {
 } from "@/components/ui/select";
 import Halo from "@/components/ui/halo";
 import { SearchIcon } from "lucide-react";
-
-type Project = {
-  slug: string;
-  title: string;
-  summary: string;
-  image: string;
-  category: string[];
-};
+import { Project } from "@/data/projects";
 
 type ProjectListProps = {
   projects: Project[];

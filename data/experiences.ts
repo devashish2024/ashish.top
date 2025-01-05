@@ -1,4 +1,13 @@
-const experiences = [
+export type Experience = {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  description: string;
+  isCurrent?: boolean;
+};
+
+const experiences: Experience[] = [
   {
     title: "Frontend Developer Intern",
     company: "Beyondriffs",

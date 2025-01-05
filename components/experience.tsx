@@ -1,11 +1,4 @@
-type Experience = {
-  title: string;
-  company: string;
-  period: string;
-  description: string;
-  location: string;
-  isCurrent?: boolean;
-};
+import { Experience } from "@/data/experiences";
 
 type WorkExperienceProps = {
   experiences: Experience[];

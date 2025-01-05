@@ -1,4 +1,4 @@
-const interviews = [
+const interviews: string[] = [
   "https://www.youtube.com/watch?v=x-hxsph7y38",
   "https://www.youtube.com/watch?v=yHSHZ1rVrPs",
   "https://www.youtube.com/watch?v=oOjwzJX6Jxc",

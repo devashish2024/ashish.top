@@ -1,4 +1,12 @@
-const projects = [
+export type Project = {
+  slug: string;
+  title: string;
+  summary: string;
+  image: string;
+  category: string[];
+};
+
+const projects: Project[] = [
   {
     slug: "portfolio-v2",
     title: "Portfolio v2",
