@@ -1,25 +1,16 @@
-"use client";
-
-import { getRepoStats } from "@/lib/data";
 import { GitFork, Star } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-export default function Footer() {
-  const [repoStats, setRepoStats] = useState({ stars: 0, forks: 0 });
+export default function Footer({
+  repoStats,
+}: {
+  repoStats: { stars: number; forks: number };
+}) {
   const currentYear = new Date().getFullYear();
-
-  useEffect(() => {
-    const fetchRepoStats = async () => {
-      const stats = await getRepoStats();
-      setRepoStats(stats);
-    };
-    fetchRepoStats();
-  }, []);
 
   return (
     <footer className="text-gray-400 py-8 border-t">
-      <div className="container mx-auto px-4 flex flex-col items-center space-y-4">
+      <div className="container mx-auto px-4 flex flex-col items-center space-y-4 text-gray-500 dark:text-gray-400">
         <Link className="text-primary text-xl font-semibold font-mono" href="/">
           {"<Ashish />"}
         </Link>

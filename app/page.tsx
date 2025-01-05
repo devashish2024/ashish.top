@@ -4,39 +4,13 @@ import ProjectList from "@/components/projects";
 import InterviewList from "@/components/interviews";
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
+import ActionLink from "@/components/ui/actionlink";
+import projects from "@/data/projects";
+import interviews from "@/data/interviews";
 
-const featuredProjects = [
-  {
-    slug: "clickcrystals",
-    title: "Full-Stack Landing Website",
-    summary:
-      "Full-stack next.js website for a popular minecraft mod, built with Next.js, Framer Motion, TailwindCSS, Postgres, Prisma and NextAuth.",
-    image: "/assets/projects/clickcrystals.png",
-  },
-  {
-    slug: "supercord",
-    title: "Supercord (verified discord bot)",
-    summary:
-      "A verified, fun and general-purpose discord bot and alternative to Dank Memer with 100+ servers and 15k+ users.",
-    image: "/assets/projects/supercord.png",
-  },
-  {
-    slug: "portfolio-v1",
-    title: "Portfolio v1",
-    summary:
-      "First version of my personal portfolio website built with Next.js, TailwindCSS and Framer Motion.",
-    image: "/assets/projects/portfolio-v1.png",
-  },
-];
+const featuredProjects = projects.slice(0, 2);
 
-const featuredInterviews = [
-  "https://www.youtube.com/watch?v=x-hxsph7y38",
-  "https://www.youtube.com/watch?v=yHSHZ1rVrPs",
-  "https://www.youtube.com/watch?v=oOjwzJX6Jxc",
-  "https://www.youtube.com/watch?v=UBULwjwGg0E",
-  // "https://www.youtube.com/watch?v=lnx5byB6-hA",
-  // "https://www.youtube.com/watch?v=1wKvqLa9rd8",
-];
+const featuredInterviews = interviews.slice(0, 4);
 
 export default function Page() {
   return (
@@ -73,35 +47,8 @@ export default function Page() {
             { href: "/about", label: "About me" },
             { href: "/sign", label: "Sign my guestbook" },
             { href: "/contact", label: "Contact me" },
-          ].map((link) => {
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
-              >
-                {link.label}{" "}
-                <svg
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="transition-all duration-75 inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 12H3"
-                    className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
-                  />
-                </svg>
-              </Link>
-            );
+          ].map((link, index) => {
+            return <ActionLink key={index} {...link} />;
           })}
         </div>
       </div>
@@ -112,31 +59,7 @@ export default function Page() {
           Pinned Interviews
         </h2>
         <InterviewList interviews={featuredInterviews} />
-        <Link
-          href="/interviews"
-          className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
-        >
-          View all interviews{" "}
-          <svg
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5 21 12m0 0-7.5 7.5"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 12H3"
-              className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
-            />
-          </svg>
-        </Link>
+        <ActionLink label="View all interviews" href="/interviews" />
       </div>
       {/* Featured Projects Section */}
       <div className="mt-8">
@@ -144,31 +67,7 @@ export default function Page() {
           Featured Projects
         </h2>
         <ProjectList projects={featuredProjects} />
-        <Link
-          href="/projects"
-          className="justify-center lg:justify-start flex items-center group gap-2 mt-6 text-gray-300 underline-offset-4 hover:underline"
-        >
-          View all projects{" "}
-          <svg
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="inline-block align-text-bottom size-4 -translate-x-1 group-hover:translate-x-0 motion-safe:transition"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5 21 12m0 0-7.5 7.5"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 12H3"
-              className="scale-x-0 origin-right [transform-box:fill-box] group-hover:scale-x-100 motion-safe:transition"
-            />
-          </svg>
-        </Link>
+        <ActionLink label="View all projects" href="/projects" />
       </div>
     </div>
   );
