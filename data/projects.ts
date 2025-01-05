@@ -1,11 +1,19 @@
 const projects = [
   {
+    slug: "portfolio-v2",
+    title: "Portfolio v2",
+    summary:
+      "Second, modern version of my Next.js portfolio built with Next.js, Framer Motion & TailwindCSS. Features a guestbook, blog and gives much information about me.",
+    image: "/assets/projects/portfolio-v2.png",
+    category: ["Next.js", "Web Development"],
+  },
+  {
     slug: "clickcrystals",
     title: "Full-Stack Landing Website",
     summary:
       "Full-stack next.js website for a popular minecraft mod, built with Next.js, Framer Motion, TailwindCSS, Postgres, Prisma and NextAuth.",
     image: "/assets/projects/clickcrystals.png",
-    category: ["Web Development"],
+    category: ["Contributions", "Next.js", "Web Development"],
   },
   {
     slug: "supercord",
@@ -13,7 +21,7 @@ const projects = [
     summary:
       "A verified, fun and general-purpose discord bot and alternative to Dank Memer with 100+ servers and 15k+ users.",
     image: "/assets/projects/supercord.png",
-    category: ["Discord Bots"],
+    category: ["Contributions", "Discord Bots"],
   },
   {
     slug: "portfolio-v1",
@@ -21,7 +29,7 @@ const projects = [
     summary:
       "First version of my personal portfolio website built with Next.js, TailwindCSS and Framer Motion.",
     image: "/assets/projects/portfolio-v1.png",
-    category: ["Web Development"],
+    category: ["Next.js", "Web Development"],
   },
 ];
 
