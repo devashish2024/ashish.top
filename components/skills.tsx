@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 
-const DRAG_LIMIT_FACTOR = 0.5; // 50% of the container width
+const DRAG_LIMIT_FACTOR = 0.5;
 
 export default function Skills() {
   const containerRef = useRef<HTMLDivElement>(null);
