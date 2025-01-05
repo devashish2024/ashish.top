@@ -17,7 +17,7 @@ export default function Skills() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [contentWidth, setContentWidth] = useState(0);
-  const x = useMotionValue(0);
+  const x = useMotionValue(-78);
   const controls = useAnimation();
   const dragControls = useDragControls();
 

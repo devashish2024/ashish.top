@@ -1,20 +1,22 @@
-import Image from "next/image";
 import avatarImage from "@/public/assets/avatar.png";
+
+import Image from "next/image";
 import ProjectList from "@/components/projects";
 import InterviewList from "@/components/interviews";
-import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
 import ActionLink from "@/components/ui/actionlink";
+import WorkExperience from "@/components/experience";
+
 import projects from "@/data/projects";
-import interviews from "@/data/interviews";
+import { interviews } from "@/data/interviews";
+import experiences from "@/data/experiences";
 
 const featuredProjects = projects.slice(0, 2);
-
 const featuredInterviews = interviews.slice(0, 4);
+const currentRole = experiences.slice(0, 1);
 
 export default function Page() {
   return (
-    <div className="container px-4 mb-12 md:mt-8 space-y-12 min-h-screen">
+    <div className="container px-4 mb-12 md:mt-4 space-y-12 min-h-screen">
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
           <Image
@@ -42,13 +44,15 @@ export default function Page() {
           journey and interviews! 🚀
         </p>
 
+        <WorkExperience experiences={currentRole} />
+
         <div className="flex gap-4">
           {[
             { href: "/about", label: "About me" },
             { href: "/sign", label: "Sign my guestbook" },
             { href: "/contact", label: "Contact me" },
           ].map((link, index) => {
-            return <ActionLink key={index} {...link} />;
+            return <ActionLink className="mt-0" key={index} {...link} />;
           })}
         </div>
       </div>
@@ -61,6 +65,7 @@ export default function Page() {
         <InterviewList interviews={featuredInterviews} />
         <ActionLink label="View all interviews" href="/interviews" />
       </div>
+
       {/* Featured Projects Section */}
       <div className="mt-8">
         <h2 className="text-2xl font-medium text-primary mb-4 font-serif">

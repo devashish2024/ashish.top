@@ -5,9 +5,13 @@ import Link from "next/link";
 
 type InterviewListProps = {
   interviews: string[];
+  priority?: boolean;
 };
 
-export default function InterviewList({ interviews }: InterviewListProps) {
+export default function InterviewList({
+  interviews,
+  priority,
+}: InterviewListProps) {
   return (
     <ul className="animated-list --mx-4 md:-mx-6 flex flex-col md:flex-row snap-x snap-mandatory scroll-pl-6 grid-cols-2 flex-nowrap gap-9 overflow-x-scroll px-6 md:grid md:overflow-auto">
       {interviews.map((interview: string) => (
@@ -25,6 +29,7 @@ export default function InterviewList({ interviews }: InterviewListProps) {
                   width={1280}
                   height={720}
                   className="w-full object-cover h-full"
+                  priority={priority}
                 />
               </Halo>
             </div>

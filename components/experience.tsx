@@ -6,7 +6,7 @@ type WorkExperienceProps = {
 
 export default function WorkExperience({ experiences }: WorkExperienceProps) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 my-2">
       {experiences.map((experience, index) => (
         <div
           key={index}

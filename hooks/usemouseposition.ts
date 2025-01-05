@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 const useMousePosition = (ref: any) => {
@@ -8,6 +10,20 @@ const useMousePosition = (ref: any) => {
     x: null,
     y: null,
   });
+
+  const saveScrollPosition = () => {
+    return {
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    };
+  };
+
+  const restoreScrollPosition = (position: {
+    scrollX: number;
+    scrollY: number;
+  }) => {
+    window.scrollTo(position.scrollX, position.scrollY);
+  };
 
   useEffect(() => {
     const updateMousePosition = (ev: any) => {
@@ -20,9 +36,12 @@ const useMousePosition = (ref: any) => {
           : null,
       });
     };
+
+    const scrollPosition = saveScrollPosition();
     window.addEventListener("mousemove", updateMousePosition);
 
     return () => {
+      restoreScrollPosition(scrollPosition);
       window.removeEventListener("mousemove", updateMousePosition);
     };
   }, [ref]);

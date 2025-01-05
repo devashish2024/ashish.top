@@ -7,9 +7,11 @@ export async function getRepoStats() {
     "https://api.github.com/repos/devashish2024/ashish.top",
     {
       method: "GET",
-      cache: "force-cache",
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      },
+      next: {
+        revalidate: 3600,
       },
     },
   );
