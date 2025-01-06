@@ -2,17 +2,23 @@ import { getRepoStats } from "@/lib/data";
 import { GitFork, Star } from "lucide-react";
 import Link from "next/link";
 
-export default async function RepoStats() {
-  const repoStats = await getRepoStats();
+export const dynamic = "force-dynamic";
 
-  return (
-    <Link
-      className="font-serif flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
-      href="https://github.com/devashish2024/ashish.top"
-      target="_blank"
-    >
-      {repoStats?.stars} <Star className="size-3" /> | {repoStats?.forks}{" "}
-      <GitFork className="size-3" />
-    </Link>
-  );
+export async function RepoStats() {
+  try {
+    const repoStats = await getRepoStats();
+    return (
+      <Link
+        className="font-serif flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
+        href="https://github.com/devashish2024/ashish.top"
+        target="_blank"
+      >
+        {repoStats?.stars} <Star className="size-3" /> | {repoStats?.forks}{" "}
+        <GitFork className="size-3" />
+      </Link>
+    );
+  } catch (error) {
+    console.error("Failed to fetch repo stats", error);
+    return <span>Error fetching stats</span>;
+  }
 }

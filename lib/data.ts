@@ -9,6 +9,7 @@ export async function getRepoStats() {
       {
         method: "GET",
         headers: {
+          ContentType: "application/json",
           Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
         next: {
