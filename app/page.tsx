@@ -72,7 +72,7 @@ export default function Page() {
           Featured Projects
         </h2>
         <ProjectList projects={featuredProjects} />
-        <ActionLink label="View all projects" href="/projects" />
+        <ActionLink label="View all projects" href="/work" />
       </div>
     </div>
   );

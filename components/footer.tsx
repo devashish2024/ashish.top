@@ -1,11 +1,7 @@
-import { GitFork, Star } from "lucide-react";
+import RepoStats from "./repostats";
 import Link from "next/link";
 
-export default function Footer({
-  repoStats,
-}: {
-  repoStats: { stars: number; forks: number };
-}) {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -25,14 +21,7 @@ export default function Footer({
             Open-source portfolio.
           </Link>
         </p>
-        <Link
-          className="font-serif flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
-          href="https://github.com/devashish2024/ashish.top"
-          target="_blank"
-        >
-          {repoStats.stars} <Star className="size-3" /> | {repoStats.forks}{" "}
-          <GitFork className="size-3" />
-        </Link>
+        <RepoStats />
       </div>
     </footer>
   );

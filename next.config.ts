@@ -1,7 +1,24 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["img.youtube.com", "skillicons.dev"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "https",
+        hostname: "skillicons.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
     dangerouslyAllowSVG: true,
   },
   eslint: {

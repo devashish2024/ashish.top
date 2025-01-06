@@ -15,7 +15,7 @@ export default async function Articles() {
               href={article.url}
               target="_blank"
               passHref
-              className="p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="p-4 border rounded-lg transition-shadow duration-300"
               key={index}
             >
               <div className="text-xl font-semibold font-serif">

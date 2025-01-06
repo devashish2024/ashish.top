@@ -81,7 +81,7 @@ export default function Page() {
           <ActionLink
             className="inline-flex justify-start mt-0"
             label="Projects"
-            href="/projects"
+            href="/work"
           />
         </p>
         <p className="text-lg">
