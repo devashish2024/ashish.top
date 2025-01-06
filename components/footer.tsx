@@ -1,4 +1,4 @@
-import { RepoStats } from "./repostats";
+import RepoStats from "./repostats";
 import Link from "next/link";
 
 export default function Footer() {
