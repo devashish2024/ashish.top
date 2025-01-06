@@ -1,10 +1,10 @@
 import avatarImage from "@/public/assets/avatar.png";
 
 import Image from "next/image";
-import ProjectList from "@/components/projects";
-import InterviewList from "@/components/interviews";
+import ProjectList from "@/components/portfolio/projects";
+import InterviewList from "@/components/interviews/interviews";
 import ActionLink from "@/components/ui/actionlink";
-import WorkExperience from "@/components/experience";
+import WorkExperience from "@/components/portfolio/experience";
 
 import projects from "@/data/projects";
 import { interviews } from "@/data/interviews";
@@ -16,7 +16,7 @@ const currentRole = experiences.slice(0, 1);
 
 export default function Page() {
   return (
-    <div className="container px-4 mb-12 md:mt-4 space-y-12 min-h-screen">
+    <div className="container px-4 mb-12 mt-2 md:mt-4 space-y-12 min-h-screen">
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
           <Image
@@ -46,13 +46,20 @@ export default function Page() {
 
         <WorkExperience experiences={currentRole} />
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
+          {/* href: "/sign", label: "Sign my guestbook" */}
           {[
             { href: "/about", label: "About me" },
-            { href: "/sign", label: "Sign my guestbook" },
+            { href: "/work", label: "My projects" },
             { href: "/contact", label: "Contact me" },
           ].map((link, index) => {
-            return <ActionLink className="mt-0" key={index} {...link} />;
+            return (
+              <ActionLink
+                className="justify-start mt-0"
+                key={index}
+                {...link}
+              />
+            );
           })}
         </div>
       </div>

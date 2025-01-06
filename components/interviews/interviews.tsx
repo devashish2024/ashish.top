@@ -17,7 +17,7 @@ export default function InterviewList({
       {interviews.map((interview: string) => (
         <li
           key={interview}
-          className="col-span-1 min-w-80 snap-start transition-opacity"
+          className="col-span-1 min-w-60 snap-start transition-opacity"
         >
           <Link href={interview} className="space-y-4" target="_blank">
             <div className="aspect-video overflow-hidden rounded-md bg-secondary">

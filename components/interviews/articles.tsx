@@ -9,7 +9,7 @@ export default async function Articles() {
         Also featured by some articles on the internet, including Zee News.
       </p>
       <div className="flex flex-col justify-between gap-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {articles.map((article, index) => (
             <Link
               href={article.url}

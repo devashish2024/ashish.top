@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import ActionLink from "./ui/actionlink";
+import ActionLink from "@/components/ui/actionlink";
 
 export function CreateMessage({ onSignOut }: { onSignOut: () => void }) {
   const [message, setMessage] = useState("");

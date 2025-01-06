@@ -1,15 +1,13 @@
-import Certifications from "@/components/certificates";
-import Skills from "@/components/skills";
+import Certifications from "@/components/portfolio/certificates";
+import Skills from "@/components/portfolio/skills";
 import ActionLink from "@/components/ui/actionlink";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import Link from "next/link";
 
 export default function Page() {
   return (

@@ -1,5 +1,5 @@
-import WorkExperience from "@/components/experience";
-import ProjectList from "@/components/projects";
+import WorkExperience from "@/components/portfolio/experience";
+import ProjectList from "@/components/portfolio/projects";
 import experiences from "@/data/experiences";
 import projects from "@/data/projects";
 

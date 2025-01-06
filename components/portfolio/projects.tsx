@@ -107,7 +107,7 @@ export default function ProjectList({
           {filteredAndSortedProjects.map((project) => (
             <li
               key={project.slug}
-              className="col-span-1 min-w-80 snap-start transition-opacity group"
+              className="col-span-1 min-w-60 snap-start transition-opacity group"
             >
               <Link href={`/projects/${project.slug}`} className="space-y-4">
                 <div className="aspect-video overflow-hidden rounded-md bg-secondary">

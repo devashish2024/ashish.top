@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
-import { Separator } from "./ui/separator";
+import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
 export const links = [
@@ -21,7 +21,6 @@ export const links = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "/interviews", label: "Interviews" },
-  { href: "/sign", label: "Guestbook" },
   { href: "/contact", label: "Contact" },
 ];
 

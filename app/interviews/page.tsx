@@ -1,5 +1,5 @@
-import Articles from "@/components/articles";
-import VideoInterviews from "@/components/videointerviews";
+import Articles from "@/components/interviews/articles";
+import VideoInterviews from "@/components/interviews/videointerviews";
 
 export default function Page() {
   return (
