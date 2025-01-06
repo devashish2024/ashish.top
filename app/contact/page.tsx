@@ -57,7 +57,7 @@ export default function Page() {
   }
 
   return (
-    <div className="container px-4 mb-12 md:mt-4 space-y-12 min-h-screen">
+    <div className="container px-4 mb-12 mt-2 md:mt-4 space-y-12 min-h-screen">
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
           <Image
@@ -68,7 +68,13 @@ export default function Page() {
           />
           <div className="font-serif">
             <div className="text-2xl font-medium">Ashish Agarwal</div>
-            <div className="text-xl text-gray-500">@devashish2024</div>
+            <Link
+              href="https://github.com/devashish2024"
+              target="_blank"
+              className="text-xl text-gray-500 hover:text-primary"
+            >
+              @devashish2024
+            </Link>
           </div>
         </div>
         <p className="text-lg">
@@ -108,7 +114,7 @@ export default function Page() {
       </div>
 
       {formVisible ? (
-        <Card className="w-full max-w-2xl mx-auto">
+        <Card className="w-full max-w-screen-md mx-auto">
           <CardHeader>
             <CardTitle className="text-2xl font-medium text-primary font-serif">
               Get in Touch

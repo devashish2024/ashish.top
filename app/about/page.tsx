@@ -11,7 +11,7 @@ import {
 
 export default function Page() {
   return (
-    <div className="container px-4 mb-12 md:mt-4 space-y-4 min-h-screen">
+    <div className="container px-4 mb-12 mt-2 md:mt-4 space-y-4 min-h-screen">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

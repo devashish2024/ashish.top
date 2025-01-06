@@ -46,7 +46,7 @@ export default function Header() {
               <MenuIcon className="text-primary size-8" />
             </div>
           </SheetTrigger>
-          <nav className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl">
+          <nav className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl  bg-white/60 dark:bg-black/40">
             <ul className="gap-x-2 text-sm font-medium flex">
               {links.map((link, index) => (
                 <li
@@ -56,22 +56,23 @@ export default function Header() {
                   <Link
                     href={link.href}
                     className={`group relative rounded-full px-3 py-2 transition-colors duration-200 ${
-                      pathname === link.href
+                      pathname === link.href ||
+                      pathname.startsWith(link.href + "/")
                         ? "font-semibold text-background dark:hover:text-foreground"
                         : "text-foreground"
                     }`}
                   >
-                    {pathname === link.href && (
+                    {(pathname === link.href ||
+                      pathname.startsWith(link.href + "/")) && (
                       <motion.span
-                        layoutId="tab-pill"
+                        initial={{ opacity: 0, x: 0, y: 0 }}
                         animate={{
-                          transition: {
-                            x: {
-                              type: "spring",
-                              stiffness: 300,
-                              damping: 30,
-                            },
-                          },
+                          opacity: 1,
+                          x: 0,
+                          y: 0,
+                        }}
+                        transition={{
+                          x: { type: "spring", stiffness: 300, damping: 30 },
                         }}
                         className="absolute inset-0 -z-10 rounded-full bg-primary group-hover:bg-primary/80"
                       ></motion.span>

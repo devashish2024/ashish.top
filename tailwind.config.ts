@@ -17,10 +17,10 @@ export default {
       container: {
         center: true,
         screens: {
-          sm: "700px",
-          md: "700px",
-          lg: "700px",
-          xl: "700px",
+          sm: "800px",
+          md: "800px",
+          lg: "800px",
+          xl: "800px",
         },
       },
       colors: {
@@ -72,5 +72,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

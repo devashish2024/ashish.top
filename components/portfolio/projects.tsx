@@ -13,10 +13,11 @@ import {
 } from "@/components/ui/select";
 import Halo from "@/components/ui/halo";
 import { SearchIcon } from "lucide-react";
-import { Project } from "@/data/projects";
+import { motion } from "framer-motion";
+import { ProjectMetadata } from "@/lib/projects";
 
 type ProjectListProps = {
-  projects: Project[];
+  projects: ProjectMetadata[];
   showSearch?: boolean;
 };
 
@@ -95,10 +96,10 @@ export default function ProjectList({
       {filteredAndSortedProjects.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-10">
           <SearchIcon className="size-12 text-gray-300" />
-          <p className="mt-4 text-lg font-semibold font-serif">
+          <p className="mt-4 text-lg font-semibold font-serif text-center">
             No results found
           </p>
-          <p className="text-gray-400 font-serif">
+          <p className="text-gray-400 text-center font-serif">
             There seems to be no projects matching your filter.
           </p>
         </div>
@@ -109,8 +110,11 @@ export default function ProjectList({
               key={project.slug}
               className="col-span-1 min-w-60 snap-start transition-opacity group"
             >
-              <Link href={`/projects/${project.slug}`} className="space-y-4">
-                <div className="aspect-video overflow-hidden rounded-md bg-secondary">
+              <Link href={`/work/${project.slug}`} className="space-y-4">
+                <motion.div
+                  layoutId={`${project.slug}_image`}
+                  className="aspect-video overflow-hidden rounded-md bg-secondary"
+                >
                   <Halo strength={10}>
                     <Image
                       draggable={false}
@@ -120,12 +124,20 @@ export default function ProjectList({
                       className="h-full w-full object-cover"
                     />
                   </Halo>
-                </div>
+                </motion.div>
                 <div className="space-y-1">
-                  <p className="font-semibold leading-tight group-hover:text-primary">
+                  <motion.p
+                    className="font-semibold leading-tight group-hover:text-primary"
+                    layoutId={`${project.slug}_title`}
+                  >
                     {project.title}
-                  </p>
-                  <p className="text-foreground/70">{project.summary}</p>
+                  </motion.p>
+                  <motion.p
+                    layoutId={`${project.slug}_summary`}
+                    className="text-foreground/70"
+                  >
+                    {project.summary}
+                  </motion.p>
                 </div>
               </Link>
             </li>

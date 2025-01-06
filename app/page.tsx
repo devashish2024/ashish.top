@@ -5,16 +5,18 @@ import ProjectList from "@/components/portfolio/projects";
 import InterviewList from "@/components/interviews/interviews";
 import ActionLink from "@/components/ui/actionlink";
 import WorkExperience from "@/components/portfolio/experience";
+import Link from "next/link";
 
-import projects from "@/data/projects";
 import { interviews } from "@/data/interviews";
+import { getProjects } from "@/lib/projects";
 import experiences from "@/data/experiences";
 
-const featuredProjects = projects.slice(0, 2);
 const featuredInterviews = interviews.slice(0, 4);
 const currentRole = experiences.slice(0, 1);
 
-export default function Page() {
+export default async function Page() {
+  const projects = await getProjects(2);
+
   return (
     <div className="container px-4 mb-12 mt-2 md:mt-4 space-y-12 min-h-screen">
       <div className="space-y-4">
@@ -27,7 +29,13 @@ export default function Page() {
           />
           <div className="font-serif">
             <div className="text-2xl font-medium">Ashish Agarwal</div>
-            <div className="text-xl text-gray-500">@devashish2024</div>
+            <Link
+              href="https://github.com/devashish2024"
+              target="_blank"
+              className="text-xl text-gray-500 hover:text-primary"
+            >
+              @devashish2024
+            </Link>
           </div>
         </div>
         <p className="text-lg">
@@ -78,7 +86,7 @@ export default function Page() {
         <h2 className="text-2xl font-medium text-primary mb-4 font-serif">
           Featured Projects
         </h2>
-        <ProjectList projects={featuredProjects} />
+        <ProjectList projects={projects} />
         <ActionLink label="View all projects" href="/work" />
       </div>
     </div>
