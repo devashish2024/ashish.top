@@ -19,18 +19,20 @@ import { ProjectMetadata } from "@/lib/projects";
 type ProjectListProps = {
   projects: ProjectMetadata[];
   showSearch?: boolean;
+  featured?: boolean;
 };
 
 export default function ProjectList({
   projects,
   showSearch = false,
+  featured = false,
 }: ProjectListProps) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sort, setSort] = useState("newest");
 
   const categories = useMemo(() => {
-    const cats = new Set(projects.flatMap((p) => p.category));
+    const cats = new Set(projects.flatMap((p) => p.categories));
     return Array.from(cats);
   }, [projects]);
 
@@ -38,9 +40,10 @@ export default function ProjectList({
     return projects
       .filter(
         (project) =>
-          (!selectedCategory || project.category.includes(selectedCategory)) &&
+          (!selectedCategory ||
+            project.categories.includes(selectedCategory)) &&
           (project.title.toLowerCase().includes(search.toLowerCase()) ||
-            project.summary.toLowerCase().includes(search.toLowerCase())),
+            project.summary.toLowerCase().includes(search.toLowerCase()))
       )
       .sort((a, b) => {
         if (sort === "newest") return 0;
@@ -105,14 +108,21 @@ export default function ProjectList({
         </div>
       ) : (
         <ul className="animated-list flex flex-col md:flex-row snap-x snap-mandatory scroll-pl-6 grid-cols-2 flex-nowrap gap-9 overflow-x-scroll md:grid md:overflow-auto">
-          {filteredAndSortedProjects.map((project) => (
-            <li
+          {projects.map((project) => (
+            <motion.li
               key={project.slug}
               className="col-span-1 min-w-60 snap-start transition-opacity group"
+              layout={featured}
+              style={{
+                display: filteredAndSortedProjects.includes(project)
+                  ? "block"
+                  : "none",
+              }}
+              transition={{ duration: 0.4 }}
             >
               <Link href={`/work/${project.slug}`} className="space-y-4">
                 <motion.div
-                  layoutId={`${project.slug}_image`}
+                  layoutId={`${project.slug}_image${featured ? "_featured" : ""}`}
                   className="aspect-video overflow-hidden rounded-md bg-secondary"
                 >
                   <Halo strength={10}>
@@ -128,19 +138,35 @@ export default function ProjectList({
                 <div className="space-y-1">
                   <motion.p
                     className="font-semibold leading-tight group-hover:text-primary"
-                    layoutId={`${project.slug}_title`}
+                    layoutId={`${project.slug}_title${featured ? "_featured" : ""}`}
                   >
                     {project.title}
                   </motion.p>
+                  <div className="flex gap-2 my-2">
+                    {project.categories.map((category, index) => (
+                      <motion.span
+                        key={category}
+                        className="text-xs text-muted-foreground font-serif bg-primary/80 rounded-full px-2 py-1 text-white font-semibold"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.05 + 0.2,
+                        }}
+                      >
+                        {category}
+                      </motion.span>
+                    ))}
+                  </div>
                   <motion.p
-                    layoutId={`${project.slug}_summary`}
+                    layoutId={`${project.slug}_summary${featured ? "_featured" : ""}`}
                     className="text-foreground/70"
                   >
                     {project.summary}
                   </motion.p>
                 </div>
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
       )}

@@ -86,7 +86,7 @@ export default async function Page() {
         <h2 className="text-2xl font-medium text-primary mb-4 font-serif">
           Featured Projects
         </h2>
-        <ProjectList projects={projects} />
+        <ProjectList featured projects={projects} />
         <ActionLink label="View all projects" href="/work" />
       </div>
     </div>

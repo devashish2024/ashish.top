@@ -16,6 +16,28 @@ export async function generateStaticParams() {
   return slugs;
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+  return {
+    title: project?.metadata.title,
+    description: project?.metadata.summary,
+    openGraph: {
+      title: project?.metadata.title,
+      description: project?.metadata.summary,
+      images: [project?.metadata.image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [project?.metadata.image],
+    },
+  };
+}
+
 export default async function Project({
   params,
 }: {
@@ -52,3 +74,5 @@ export default async function Project({
     </div>
   );
 }
+
+export const dynamicParams = false;

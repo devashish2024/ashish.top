@@ -15,7 +15,7 @@ export type ProjectMetadata = {
   title: string;
   summary: string;
   image: string;
-  category: string[];
+  categories: string[];
   publishedAt?: string;
   slug: string;
 };
@@ -29,7 +29,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
       metadata: {
         title: data.title,
         summary: data.summary,
-        category: data.category,
+        categories: data.categories,
         slug,
         image: data.image,
         publishedAt: data.publishedAt,
@@ -65,7 +65,7 @@ export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
 }
 
 export async function getProjectMetadata(
-  filepath: string,
+  filepath: string
 ): Promise<ProjectMetadata> {
   const slug = filepath.replace(/\.mdx$/, "");
   const filePath = path.join(rootDirectory, filepath);

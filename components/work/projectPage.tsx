@@ -1,9 +1,6 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { formatDate } from "@/lib/utils";
-import MDXContent from "../layout/mdxcontent";
+import Content from "./content";
+import Meta from "./meta";
+import Summary from "./summary";
 
 export default function ProjectPage({
   slug,
@@ -12,6 +9,7 @@ export default function ProjectPage({
   publishedAt,
   summary,
   content,
+  categories,
 }: {
   slug: string;
   image: string;
@@ -19,40 +17,21 @@ export default function ProjectPage({
   publishedAt?: string;
   summary?: string;
   content: string;
+  categories: string[];
 }) {
   return (
     <>
-      {image && (
-        <motion.div
-          layoutId={`${slug}_image`}
-          className="relative mb-6 h-96 w-full overflow-hidden rounded-lg group bg-black"
-        >
-          <Image
-            src={image}
-            alt={title || ""}
-            className="object-contain w-full h-full transition-transform transform group-hover:scale-105 group-hover:opacity-70"
-            fill
-          />
-          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </motion.div>
-      )}
+      <Meta
+        slug={slug}
+        image={image}
+        title={title}
+        publishedAt={publishedAt}
+        categories={categories}
+      />
 
-      <header>
-        <motion.h1 className="title" layoutId={`${slug}_title`}>
-          {title}
-        </motion.h1>
-        <p className="mt-3 text-xs text-muted-foreground">
-          Ashish Agarwal / {formatDate(publishedAt ?? "")}
-        </p>
-      </header>
-
-      <main className="prose mt-16 dark:prose-invert">
-        {summary && (
-          <motion.p className="text-lg" layoutId={`${slug}_summary`}>
-            {summary}
-          </motion.p>
-        )}
-        <MDXContent source={content} />
+      <main className="prose dark:prose-invert">
+        {summary && <Summary summary={summary} />}
+        <Content content={content} />
       </main>
     </>
   );
