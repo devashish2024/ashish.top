@@ -122,24 +122,29 @@ export default function ProjectList({
             >
               <Link href={`/work/${project.slug}`} className="space-y-4">
                 <motion.div
-                  layoutId={`${project.slug}_image${featured ? "_featured" : ""}`}
+                  layoutId={
+                    project.image
+                      ? `${project.slug}_image${featured ? "_featured" : ""}`
+                      : undefined
+                  }
                   className="aspect-video overflow-hidden rounded-md bg-secondary"
                 >
                   <Halo strength={10}>
-                    <Image
-                      draggable={false}
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="h-full w-full object-cover"
-                    />
+                    {project.image ? (
+                      <Image
+                        draggable={false}
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-full w-full object-cover bg-secondary" />
+                    )}
                   </Halo>
                 </motion.div>
                 <div className="space-y-1">
-                  <motion.p
-                    className="font-semibold leading-tight group-hover:text-primary"
-                    layoutId={`${project.slug}_title${featured ? "_featured" : ""}`}
-                  >
+                  <motion.p className="font-semibold leading-tight group-hover:text-primary">
                     {project.title}
                   </motion.p>
                   <div className="flex gap-2 my-2">

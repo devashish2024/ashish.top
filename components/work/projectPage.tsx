@@ -29,7 +29,7 @@ export default function ProjectPage({
         categories={categories}
       />
 
-      <main className="prose dark:prose-invert">
+      <main>
         {summary && <Summary summary={summary} />}
         <Content content={content} />
       </main>

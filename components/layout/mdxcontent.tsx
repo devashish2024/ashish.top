@@ -1,9 +1,12 @@
+import "@/styles/mdx.css";
+
 import { JSX } from "react";
 import { highlight } from "sugar-high";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import Link from "next/link";
 
-// import Counter from "@/components/counter";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 
 function Code({ children, ...props }: any) {
   let codeHTML = highlight(children);
@@ -57,9 +60,17 @@ export default function MDXContent(
   props: JSX.IntrinsicAttributes & MDXRemoteProps
 ) {
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
+    <div className="mdx-content">
+      <MDXRemote
+        {...props}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkGfm],
+            rehypePlugins: [rehypeHighlight],
+          },
+        }}
+        components={{ ...components, ...(props.components || {}) }}
+      />
+    </div>
   );
 }

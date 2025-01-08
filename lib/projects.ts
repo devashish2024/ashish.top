@@ -14,7 +14,7 @@ export type Project = {
 export type ProjectMetadata = {
   title: string;
   summary: string;
-  image: string;
+  image?: string | undefined | null;
   categories: string[];
   publishedAt?: string;
   slug: string;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Outfit } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 
 import Providers from "@/components/layout/providers";
 

@@ -6,20 +6,20 @@ import { motion } from "framer-motion";
 
 export default function Meta({
   title,
-  image,
+  image = null,
   slug,
   publishedAt,
   categories,
 }: {
   title: string | undefined;
-  image: string;
+  image?: string | undefined | null;
   slug: string;
   publishedAt: string | undefined;
   categories: string[];
 }) {
   return (
     <div>
-      {image && (
+      {image !== null && image !== undefined && (
         <motion.div
           layoutId={`${slug}_image`}
           className="relative mb-6 h-96 w-full overflow-hidden rounded-lg group bg-black"
@@ -36,7 +36,7 @@ export default function Meta({
 
       <header className="space-y-2 my-2">
         <motion.h1
-          className="text-2xl font-semibold font-serif"
+          className="text-4xl font-semibold font-serif"
           layoutId={`${slug}_title`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
