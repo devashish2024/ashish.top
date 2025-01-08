@@ -7,7 +7,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import ProjectPage from "@/components/work/projectPage";
+import ProjectPage from "@/components/projects/projectPage";
 
 export async function generateStaticParams() {
   const projects = await getProjects();

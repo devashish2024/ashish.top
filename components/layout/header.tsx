@@ -54,7 +54,10 @@ export default function Header() {
               <MenuIcon className="text-primary size-8" />
             </div>
           </SheetTrigger>
-          <nav className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl">
+          <nav
+            className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl"
+            suppressHydrationWarning
+          >
             <ul className="gap-x-2 text-sm font-medium flex">
               {links.map((link, index) => (
                 <li

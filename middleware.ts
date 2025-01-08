@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
 
   switch (url.pathname) {
     case "/work":
-      return NextResponse.redirect(new URL("/experience", request.url));
+      return NextResponse.redirect(new URL("/projects", request.url));
     case "/home":
       return NextResponse.redirect(new URL("/", request.url));
     case "/highlights":
