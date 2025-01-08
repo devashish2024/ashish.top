@@ -19,7 +19,8 @@ import { useState } from "react";
 export const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/work", label: "Work" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
   { href: "/interviews", label: "Interviews" },
   { href: "/contact", label: "Contact" },
 ];
@@ -28,10 +29,17 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
+  const isActive = (href: string) => {
+    return (
+      pathname === href ||
+      (pathname.startsWith("/projects") && href.startsWith("/projects"))
+    );
+  };
+
   return (
     <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
       <header
-        className="sticky top-0 left-0 z-50 mt-2 px-6 py-4 md:py-8 backdrop-blur-md md:backdrop-blur-none"
+        className="sticky top-0 z-50 mt-2 px-6 py-4 md:py-8 backdrop-blur-md md:backdrop-blur-none"
         suppressHydrationWarning
       >
         <div className="flex items-center justify-between md:justify-center">
@@ -46,7 +54,7 @@ export default function Header() {
               <MenuIcon className="text-primary size-8" />
             </div>
           </SheetTrigger>
-          <nav className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl  bg-white/60 dark:bg-black/40">
+          <nav className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl">
             <ul className="gap-x-2 text-sm font-medium flex">
               {links.map((link, index) => (
                 <li
@@ -56,23 +64,22 @@ export default function Header() {
                   <Link
                     href={link.href}
                     className={`group relative rounded-full px-3 py-2 transition-colors duration-200 ${
-                      pathname === link.href ||
-                      pathname.startsWith(link.href + "/")
+                      isActive(link.href)
                         ? "font-semibold text-background dark:hover:text-foreground"
                         : "text-foreground"
                     }`}
                   >
-                    {(pathname === link.href ||
-                      pathname.startsWith(link.href + "/")) && (
+                    {isActive(link.href) && (
                       <motion.span
-                        initial={{ opacity: 0, x: 0, y: 0 }}
+                        layoutId="tab-pill"
                         animate={{
-                          opacity: 1,
-                          x: 0,
-                          y: 0,
-                        }}
-                        transition={{
-                          x: { type: "spring", stiffness: 300, damping: 30 },
+                          transition: {
+                            x: {
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 30,
+                            },
+                          },
                         }}
                         className="absolute inset-0 -z-10 rounded-full bg-primary group-hover:bg-primary/80"
                       ></motion.span>

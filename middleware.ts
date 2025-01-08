@@ -4,8 +4,8 @@ export function middleware(request: NextRequest) {
   const url = new URL(request.url);
 
   switch (url.pathname) {
-    case "/projects":
-      return NextResponse.redirect(new URL("/work", request.url));
+    case "/work":
+      return NextResponse.redirect(new URL("/experience", request.url));
     case "/home":
       return NextResponse.redirect(new URL("/", request.url));
     case "/highlights":
@@ -20,7 +20,7 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect("https://github.com/vortexprime24");
     case "/s/dc":
       return NextResponse.redirect(
-        "https://discordapp.com/users/1153023901203447940",
+        "https://discordapp.com/users/1153023901203447940"
       );
     case "/s/mail":
       return NextResponse.redirect("mailto:me@ashish.top");
@@ -31,7 +31,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/projects", // we got work route not projects
+    "/work",
     "/home", // not needed
     "/highlights", // redirect old routes to new ones
     "/guestbook", // redirect old routes to new ones

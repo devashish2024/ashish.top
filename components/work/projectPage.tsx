@@ -4,7 +4,7 @@ import Summary from "./summary";
 
 export default function ProjectPage({
   slug,
-  image,
+  image = null,
   title,
   publishedAt,
   summary,
@@ -12,7 +12,7 @@ export default function ProjectPage({
   categories,
 }: {
   slug: string;
-  image: string;
+  image?: string | null;
   title?: string;
   publishedAt?: string;
   summary?: string;

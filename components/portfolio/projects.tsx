@@ -120,7 +120,7 @@ export default function ProjectList({
               }}
               transition={{ duration: 0.4 }}
             >
-              <Link href={`/work/${project.slug}`} className="space-y-4">
+              <Link href={`/projects/${project.slug}`} className="space-y-4">
                 <motion.div
                   layoutId={
                     project.image
