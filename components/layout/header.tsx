@@ -55,7 +55,7 @@ export default function Header() {
             </div>
           </SheetTrigger>
           <nav
-            className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl"
+            className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl bg-white/40 dark:bg-black/40"
             suppressHydrationWarning
           >
             <ul className="gap-x-2 text-sm font-medium flex">
@@ -66,6 +66,7 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
+                    scroll={true}
                     className={`group relative rounded-full px-3 py-2 transition-colors duration-200 ${
                       isActive(link.href)
                         ? "font-semibold text-background dark:hover:text-foreground"
@@ -75,6 +76,7 @@ export default function Header() {
                     {isActive(link.href) && (
                       <motion.span
                         layoutId="tab-pill"
+                        style={{ originY: "0px" }}
                         animate={{
                           transition: {
                             x: {
