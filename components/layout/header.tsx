@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Sun, Moon, MenuIcon } from "lucide-react";
+import { Sun, Moon, Equal } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 export const links = [
   { href: "/", label: "Home" },
@@ -50,8 +51,8 @@ export default function Header() {
             {"<Ashish />"}
           </Link>
           <SheetTrigger className="md:hidden">
-            <div className="p-2 rounded-full border-2 border-primary bg-accent/10">
-              <MenuIcon className="text-primary size-8" />
+            <div className="flex items-center justify-center p-1.5 rounded-full border">
+              <Equal className="text-primary h-6 w-6" />
             </div>
           </SheetTrigger>
           <nav
