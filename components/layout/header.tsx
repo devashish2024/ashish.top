@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Equal } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import {
   Sheet,
   SheetTrigger,
@@ -30,6 +30,20 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  const handleScroll = () => {
+    const currentScrollY = scrollY.get();
+    const previous = scrollY.getPrevious() || 0;
+
+    if (currentScrollY > previous && currentScrollY > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  };
+
   const isActive = (href: string) => {
     return (
       pathname === href ||
@@ -37,11 +51,24 @@ export default function Header() {
     );
   };
 
+  useMotionValueEvent(scrollY, "change", handleScroll);
+
   return (
     <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
-      <header
+      <motion.header
         className="sticky top-0 z-50 mt-2 px-6 py-4 md:py-8 backdrop-blur-md md:backdrop-blur-none"
         suppressHydrationWarning
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 30,
+          mass: 1,
+        }}
       >
         <div className="flex items-center justify-between md:justify-center">
           <Link
@@ -98,7 +125,7 @@ export default function Header() {
             <ThemeToggle />
           </nav>
         </div>
-      </header>
+      </motion.header>
       <SheetContent side={"bottom"}>
         <SheetHeader>
           <SheetTitle className="sr-only">Navigation Bar</SheetTitle>
