@@ -1,4 +1,4 @@
-import ProjectList from "@/components/portfolio/projects";
+import { ProjectsList } from "@/components/projects/list";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -6,11 +6,8 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getProjects } from "@/lib/projects";
 
 export default async function Page() {
-  const projects = await getProjects();
-
   return (
     <div className="container px-4 mb-12 md:mt-4 space-y-4 min-h-screen">
       <Breadcrumb>
@@ -30,7 +27,7 @@ export default async function Page() {
         <p className="mt-2 mb-6">
           Click a project to view all skills involved and a detailed info.
         </p>
-        <ProjectList projects={projects} showSearch />
+        <ProjectsList />
       </section>
     </div>
   );
