@@ -3,6 +3,32 @@ import { Project } from "./modal";
 
 const projects: Project[] = [
   {
+    title: "Portfolio v2",
+    description:
+      "Second, modern version of my Next.js portfolio, featuring a guestbook, blog, and detailed information about me.",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Web Development"],
+    image: "/assets/projects/portfolio-v2.png",
+    detailedInfo:
+      "Portfolio v2 is a refined and modernized version of my portfolio website. It includes advanced animations, a guestbook feature, a blog, and an improved UI for better user experience.",
+    involvedTech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    myRole: "Developer",
+    myRoleDetailed:
+      "Developed the UI/UX, implemented a guestbook and blog system, and optimized animations and page transitions.",
+    links: [
+      {
+        label: "Demo",
+        url: "https://ashish.top",
+        type: "url",
+      },
+      {
+        label: "Source",
+        url: "https://github.com/devashish2024/ashish.top",
+        type: "source",
+      },
+    ],
+    date: "Jan 2, 2025",
+  },
+  {
     title: "ClickCrystals",
     description:
       "Full-stack next.js website for a popular minecraft mod, built with Next.js, Framer Motion, TailwindCSS, Postgres, Prisma and NextAuth.",
@@ -50,7 +76,7 @@ const projects: Project[] = [
   {
     title: "MusicMaster Landing Page",
     description:
-      "Landing page built with Next.js, Framer Motion, and TailwindCSS. Created as a task for an internship application at Beyondriffs.",
+      "Landing page built with Next.js, Framer Motion, and TailwindCSS. Created in <2hours as a task for an internship application at Beyondriffs.",
     tags: ["Next.js", "Framer Motion", "Tailwind CSS", "Web Development"],
     image: "/assets/projects/musicmaster.png",
     detailedInfo:
@@ -72,6 +98,33 @@ const projects: Project[] = [
       },
     ],
     date: "Sep 19, 2024",
+  },
+
+  {
+    title: "Supercord (Verified Discord Bot)",
+    description:
+      "A verified, fun, and general-purpose Discord bot, serving as an alternative to Dank Memer with 100+ servers and 15k+ users. (RESIGNED)",
+    tags: ["Python", "Discord Bots", "AI", "Fun Bot"],
+    image: "/assets/projects/supercord.png",
+    detailedInfo:
+      "Supercord is a powerful, multipurpose Discord bot that provides entertainment, economy, and utility commands. It is verified by Discord and used across 100+ servers with over 15,000 users.",
+    involvedTech: ["Python", "Discord.py", "Postgres", "Jishaku"],
+    myRole: "Bot Developer",
+    myRoleDetailed:
+      "Developed and maintained core functionalities, including currency systems, mini-games, and administrative tools.",
+    links: [
+      {
+        label: "Website",
+        url: "https://supercord.lol",
+        type: "url",
+      },
+      {
+        label: "Discord",
+        url: "https://discord.gg/super-florr-players-1079971830384828497",
+        type: "discord",
+      },
+    ],
+    date: "March, 2024 (resigned)",
   },
   {
     title: "Periodic Table Visualizer & SVG Generator",
@@ -124,58 +177,6 @@ const projects: Project[] = [
       },
     ],
     date: "March 31, 2024",
-  },
-  {
-    title: "Portfolio v2",
-    description:
-      "Second, modern version of my Next.js portfolio, featuring a guestbook, blog, and detailed information about me.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Web Development"],
-    image: "/assets/projects/portfolio-v2.png",
-    detailedInfo:
-      "Portfolio v2 is a refined and modernized version of my portfolio website. It includes advanced animations, a guestbook feature, a blog, and an improved UI for better user experience.",
-    involvedTech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    myRole: "Developer",
-    myRoleDetailed:
-      "Developed the UI/UX, implemented a guestbook and blog system, and optimized animations and page transitions.",
-    links: [
-      {
-        label: "Demo",
-        url: "https://ashish.top",
-        type: "url",
-      },
-      {
-        label: "Source",
-        url: "https://github.com/devashish2024/ashish.top",
-        type: "source",
-      },
-    ],
-    date: "Jan 2, 2025",
-  },
-  {
-    title: "Supercord (Verified Discord Bot)",
-    description:
-      "A verified, fun, and general-purpose Discord bot, serving as an alternative to Dank Memer with 100+ servers and 15k+ users.",
-    tags: ["Python", "Discord Bots", "AI", "Fun Bot"],
-    image: "/assets/projects/supercord.png",
-    detailedInfo:
-      "Supercord is a powerful, multipurpose Discord bot that provides entertainment, economy, and utility commands. It is verified by Discord and used across 100+ servers with over 15,000 users.",
-    involvedTech: ["Python", "Discord.py", "SQLite"],
-    myRole: "Bot & Web Developer",
-    myRoleDetailed:
-      "Developed and maintained core functionalities, including currency systems, mini-games, and administrative tools.",
-    links: [
-      {
-        label: "Demo",
-        url: "https://supercord.lol",
-        type: "url",
-      },
-      {
-        label: "Discord",
-        url: "https://discord.gg/super-florr-players-1079971830384828497",
-        type: "discord",
-      },
-    ],
-    date: "March, 2024 (resigned)",
   },
 ];
 
