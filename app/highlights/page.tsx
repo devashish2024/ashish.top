@@ -1,5 +1,6 @@
-import Articles from "@/components/interviews/articles";
-import VideoInterviews from "@/components/interviews/videointerviews";
+import Articles from "@/components/highlights/articles";
+import Books from "@/components/highlights/books";
+import VideoInterviews from "@/components/highlights/videointerviews";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -18,17 +19,19 @@ export default function Page() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink>Interviews</BreadcrumbLink>
+            <BreadcrumbLink>Highlights</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
       <section className="space-y-6">
         <div>
           <div className="space-y-2">
-            <div className="text-3xl font-semibold font-serif">Interviews</div>
+            <div className="text-3xl font-semibold font-serif">Highlights</div>
             <hr className="border-b w-full" />
           </div>
         </div>
+
+        <Books />
 
         <VideoInterviews />
 

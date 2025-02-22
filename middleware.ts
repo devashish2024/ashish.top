@@ -10,8 +10,8 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL("/work", request.url));
     case "/home":
       return NextResponse.redirect(new URL("/", request.url));
-    case "/highlights":
-      return NextResponse.redirect(new URL("/interviews", request.url));
+    case "/interviews":
+      return NextResponse.redirect(new URL("/highlights", request.url));
     case "/guestbook":
       return NextResponse.redirect(new URL("/sign", request.url));
     case "/s/v1":
@@ -36,7 +36,7 @@ export const config = {
     "/projects",
     "/experience",
     "/home", // not needed
-    "/highlights", // redirect old routes to new ones
+    "/interviews", // redirect old routes to new ones
     "/guestbook", // redirect old routes to new ones
 
     // social and short links

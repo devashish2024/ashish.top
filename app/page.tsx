@@ -1,7 +1,7 @@
 import avatarImage from "@/public/assets/avatar.png";
 
 import Image from "next/image";
-import InterviewList from "@/components/interviews/interviews";
+import InterviewList from "@/components/highlights/interviews";
 import ActionLink from "@/components/ui/actionlink";
 import WorkExperience from "@/components/portfolio/experience";
 import Link from "next/link";
