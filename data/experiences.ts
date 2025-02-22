@@ -14,7 +14,7 @@ const experiences: Experience[] = [
     location: "Remote",
     period: "Oct 2024 - Present",
     description:
-      "Lead the design & development of admin tools & e-commerce storefront. Collaborating closely with CEO & Product Team to track objectives & ship frequently.",
+      "Improved the website's SEO, added nice features and improved design.",
     isCurrent: true,
   },
   {

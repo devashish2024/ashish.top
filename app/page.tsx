@@ -8,6 +8,7 @@ import Link from "next/link";
 
 import { interviews } from "@/data/interviews";
 import experiences from "@/data/experiences";
+import { ProjectsList } from "@/components/projects/list";
 
 const featuredInterviews = interviews.slice(0, 4);
 const currentRole = experiences.slice(0, 1);
@@ -82,8 +83,9 @@ export default async function Page() {
         <h2 className="text-2xl font-medium text-primary mb-4 font-serif">
           Featured Projects
         </h2>
-        Projects have been moved to their seperate page.
-        <ActionLink label="View all projects" href="/work" />
+        <ProjectsList isHome />
+        {/* Projects have been moved to their seperate page. */}
+        <ActionLink label="View all projects" href="/work" className="!my-4" />
       </div>
     </div>
   );

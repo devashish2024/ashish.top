@@ -6,7 +6,7 @@ import ActionLink from "@/components/ui/actionlink";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { Mail, Send } from "lucide-react";
 import { Label } from "@/components/ui/label";
@@ -85,14 +85,19 @@ export default function Page() {
         <div className="flex flex-col sm:flex-row justify-center items-start sm:justify-start sm:items-center gap-2 sm:gap-4">
           {[
             {
+              href: "https://www.linkedin.com/in/ashishagarwa/",
+              icon: FaLinkedin,
+              label: "ashishagarwa",
+            },
+            {
               href: "https://github.com/devashish2024",
               icon: FaGithub,
               label: "devashish2024",
             },
             {
-              href: "https://discordapp.com/users/1153023901203447940",
-              icon: FaDiscord,
-              label: "v0rtexdev.",
+              href: "https://github.com/vortexprime24",
+              icon: FaGithub,
+              label: "vortexprime24",
             },
             {
               href: "mailto:me@ashish.top",

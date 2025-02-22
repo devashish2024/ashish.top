@@ -25,17 +25,29 @@ export default async function Page() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <section>
-        <div className="text-3xl font-medium font-serif">Projects</div>
-        <p className="mt-2 mb-6">
-          Click a project to view all skills involved and a detailed info.
-        </p>
-        <ProjectsList />
-      </section>
+      <section className="space-y-6">
+        <div>
+          <div className="space-y-2">
+            <div className="text-3xl font-semibold font-serif">Work</div>
+            <hr className="border-b w-full" />
+          </div>
+        </div>
 
-      <section className="space-y-8 py-8">
-        <div className="text-3xl font-medium font-serif">Work Experience</div>
-        <WorkExperience experiences={experiences} />
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <div className="text-2xl font-semibold font-serif">Projects</div>
+            <p className="text-sm">Click a project to view it detailed.</p>
+          </div>
+          <ProjectsList />
+        </div>
+
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <div className="text-2xl font-semibold font-serif">Experience</div>
+            <p className="text-sm">Past work experiences</p>
+          </div>
+          <WorkExperience experiences={experiences} />
+        </div>
       </section>
     </div>
   );

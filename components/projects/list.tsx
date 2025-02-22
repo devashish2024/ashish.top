@@ -180,12 +180,24 @@ const projects: Project[] = [
   },
 ];
 
-export function ProjectsList() {
+export function ProjectsList({ isHome = false }: { isHome?: boolean }) {
+  const featuredProjects = projects.slice(0, 4);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {projects.map((project, i) => (
-        <ProjectCard key={i} project={project} />
-      ))}
+      {isHome ? (
+        <>
+          {featuredProjects.map((project, i) => (
+            <ProjectCard key={i} project={project} />
+          ))}
+        </>
+      ) : (
+        <>
+          {projects.map((project, i) => (
+            <ProjectCard key={i} project={project} />
+          ))}
+        </>
+      )}
     </div>
   );
 }
