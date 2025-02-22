@@ -59,7 +59,7 @@ export default function Page() {
         </p>
         <Certifications />
         <p className="text-lg">
-          Even after that, I've done an internship at Safar as a Operations
+          Even after that, I've done an internship at Safar as an Operations
           Intern (3-months internship) and currently working on a Frontend
           Developer Internship at Beyondriffs (6-months internship). I've also
           built websites for several projects and clients, including a website I
@@ -88,7 +88,7 @@ export default function Page() {
           Books, go ahead and buy them now! 📚
         </p>
         <p className="text-lg">
-          So far, this is a incredible list of achievements for a 13-year old
+          So far, this is an incredible list of achievements for a 13-year old
           kid like me. I'm proud of myself and my parents are proud of me too.
           I'm looking forward to learning more and building more amazing
           projects in the future. 🚀
