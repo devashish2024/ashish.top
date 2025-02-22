@@ -1,10 +1,7 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaGithub } from "react-icons/fa";
 
 export interface Project {
   title: string;
@@ -68,7 +65,7 @@ export function ProjectModal({ project }: { project: Project }) {
                       ) : type === "discord" ? (
                         <FaDiscord className="w-4 h-4 text-blue-500" />
                       ) : (
-                        <Github className="w-4 h-4 text-blue-500" />
+                        <FaGithub className="w-4 h-4 text-blue-500" />
                       )}
                       {label}
                     </Link>
@@ -81,7 +78,7 @@ export function ProjectModal({ project }: { project: Project }) {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.involvedTech.map((tech) => (
-                    <Badge key={tech} variant="secondary">
+                    <Badge key={tech} variant="outline">
                       {tech}
                     </Badge>
                   ))}
