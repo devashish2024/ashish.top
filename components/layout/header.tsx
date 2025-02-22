@@ -15,13 +15,11 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
 
 export const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/experience", label: "Experience" },
+  { href: "/work", label: "Work" },
   { href: "/interviews", label: "Interviews" },
   { href: "/contact", label: "Contact" },
 ];

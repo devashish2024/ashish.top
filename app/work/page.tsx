@@ -1,4 +1,7 @@
 import WorkExperience from "@/components/portfolio/experience";
+import experiences from "@/data/experiences";
+
+import { ProjectsList } from "@/components/projects/list";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -6,7 +9,6 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import experiences from "@/data/experiences";
 
 export default async function Page() {
   return (
@@ -18,12 +20,20 @@ export default async function Page() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink>Work Experience</BreadcrumbLink>
+            <BreadcrumbLink>Work</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
-      <section className="space-y-8">
+      <section>
+        <div className="text-3xl font-medium font-serif">Projects</div>
+        <p className="mt-2 mb-6">
+          Click a project to view all skills involved and a detailed info.
+        </p>
+        <ProjectsList />
+      </section>
+
+      <section className="space-y-8 py-8">
         <div className="text-3xl font-medium font-serif">Work Experience</div>
         <WorkExperience experiences={experiences} />
       </section>
