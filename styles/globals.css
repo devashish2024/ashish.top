@@ -12,14 +12,18 @@ body {
 
 @layer base {
     :root {
-        --primary: 10 86% 44%;
-        /* --primary: 220 86% 44%; */
-        /* --primary: 304 86% 44%; */
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
+        --theme: 10 86% 44%;
+        /* --theme: 220 86% 44%; */
+        /* --theme: 304 86% 44%; */
+
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
+
         --card: 0 0% 100%;
         --card-foreground: 240 10% 3.9%;
         --popover: 0 0% 100%;
@@ -41,8 +45,14 @@ body {
         --radius: 0.5rem;
     }
     .dark {
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
+
         --card: 240 10% 3.9%;
         --card-foreground: 0 0% 98%;
         --popover: 240 10% 3.9%;
@@ -85,12 +95,4 @@ body {
 
 .overflow-x-scroll.snap-x::-webkit-scrollbar {
     display: none;
-}
-
-.mdx-content {
-    @apply py-4;
-}
-
-.mdx-content pre {
-    @apply overflow-x-auto bg-[#0d1117] border border-[#161b22] rounded-lg p-4 my-4;
 }

@@ -21,6 +21,7 @@ export const links = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "/highlights", label: "Highlights" },
+  { href: "/sign", label: "Guestbook" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -70,14 +71,14 @@ export default function Header() {
       >
         <div className="flex items-center justify-between md:justify-center">
           <Link
-            className="text-primary text-2xl font-semibold md:hidden font-mono"
+            className="text-theme text-2xl font-semibold md:hidden font-mono"
             href="/"
           >
             {"<Ashish />"}
           </Link>
           <SheetTrigger className="md:hidden">
             <div className="flex items-center justify-center p-1.5 rounded-full border">
-              <Equal className="text-primary h-6 w-6" />
+              <Equal className="text-theme h-6 w-6" />
             </div>
           </SheetTrigger>
           <nav
@@ -112,7 +113,7 @@ export default function Header() {
                             },
                           },
                         }}
-                        className="absolute inset-0 -z-10 rounded-full bg-primary group-hover:bg-primary/80"
+                        className="absolute inset-0 -z-10 rounded-full bg-theme group-hover:bg-theme/80"
                       ></motion.span>
                     )}
                     {link.label}
@@ -142,8 +143,8 @@ export default function Header() {
               <span
                 className={`text-xl p-2 rounded-md transition-colors duration-200 ${
                   pathname === link.href
-                    ? "bg-primary text-white"
-                    : "font-medium text-primary brightness-150"
+                    ? "bg-theme text-white"
+                    : "font-medium text-theme brightness-150"
                 }`}
               >
                 {link.label}
@@ -166,8 +167,8 @@ function ThemeToggle({ size = 6 }) {
       className="p-2 rounded-full transition-transform duration-100 hover:scale-[1.1]"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-      <Sun className={`size-${size} text-primary hidden dark:block`} />
-      <Moon className={`size-${size} text-primary dark:hidden`} />
+      <Sun className={`size-${size} text-theme hidden dark:block`} />
+      <Moon className={`size-${size} text-theme dark:hidden`} />
     </button>
   );
 }

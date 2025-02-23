@@ -19,7 +19,7 @@ export default async function Articles() {
               key={index}
             >
               <div className="text-xl font-semibold font-serif">
-                <span className="text-primary hover:brightness-90">
+                <span className="text-theme hover:brightness-90">
                   {article.site}
                 </span>
               </div>

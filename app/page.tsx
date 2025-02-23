@@ -22,14 +22,14 @@ export default async function Page() {
             src={avatarImage}
             alt="Avatar"
             priority
-            className="size-16 rounded-full ring ring-primary"
+            className="size-16 rounded-full ring ring-theme"
           />
           <div className="font-serif">
             <div className="text-2xl font-medium">Ashish Agarwal</div>
             <Link
               href="https://github.com/devashish2024"
               target="_blank"
-              className="text-xl text-gray-500 hover:text-primary"
+              className="text-xl text-gray-500 hover:text-theme"
             >
               @devashish2024
             </Link>
@@ -71,7 +71,7 @@ export default async function Page() {
 
       {/* Pinned Interviews Section */}
       <div className="mt-8">
-        <h2 className="text-2xl font-medium text-primary mb-4 font-serif">
+        <h2 className="text-2xl font-medium text-theme mb-4 font-serif">
           Pinned Interviews
         </h2>
         <InterviewList interviews={featuredInterviews} />
@@ -80,7 +80,7 @@ export default async function Page() {
 
       {/* Featured Projects Section */}
       <div className="mt-8 space-y-2">
-        <h2 className="text-2xl font-medium text-primary mb-4 font-serif">
+        <h2 className="text-2xl font-medium text-theme mb-4 font-serif">
           Featured Projects
         </h2>
         <ProjectsList isHome />

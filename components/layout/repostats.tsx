@@ -7,7 +7,7 @@ export default async function RepoStats() {
 
   return (
     <Link
-      className="font-serif flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-primary transition-all duration-75"
+      className="font-serif flex text-xs items-center gap-1 hover:underline underline-offset-2 hover:text-theme transition-all duration-75"
       href="https://github.com/devashish2024/ashish.top"
       target="_blank"
     >

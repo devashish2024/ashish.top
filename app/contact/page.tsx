@@ -64,14 +64,14 @@ export default function Page() {
             src={avatarImage}
             alt="Avatar"
             priority
-            className="size-16 rounded-full ring ring-primary"
+            className="size-16 rounded-full ring ring-theme"
           />
           <div className="font-serif">
             <div className="text-2xl font-medium">Ashish Agarwal</div>
             <Link
               href="https://github.com/devashish2024"
               target="_blank"
-              className="text-xl text-gray-500 hover:text-primary"
+              className="text-xl text-gray-500 hover:text-theme"
             >
               @devashish2024
             </Link>
@@ -109,7 +109,7 @@ export default function Page() {
               key={index}
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : "_self"}
-              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-serif transition-all duration-75"
+              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-theme dark:hover:text-theme font-serif transition-all duration-75"
             >
               <link.icon className="size-5" />
               <span>{link.label}</span>
@@ -121,7 +121,7 @@ export default function Page() {
       {formVisible ? (
         <Card className="w-full max-w-screen-md mx-auto">
           <CardHeader>
-            <CardTitle className="text-2xl font-medium text-primary font-serif">
+            <CardTitle className="text-2xl font-medium text-theme font-serif">
               Get in Touch
             </CardTitle>
             <CardDescription className="font-serif text-lg text-gray-800 dark:text-gray-200">
@@ -171,9 +171,7 @@ export default function Page() {
       ) : (
         <Card className="w-full max-w-2xl mx-auto">
           <CardContent className="font-serif text-center py-8">
-            <h2 className="text-2xl font-medium text-primary mb-4">
-              Thank You!
-            </h2>
+            <h2 className="text-2xl font-medium text-theme mb-4">Thank You!</h2>
             <p className="text-lg text-gray-800 dark:text-gray-200">
               Your message has been sent successfully. I'll get back to you as
               soon as possible.

@@ -24,6 +24,7 @@ export default {
         },
       },
       colors: {
+        theme: "hsl(var(--theme))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
