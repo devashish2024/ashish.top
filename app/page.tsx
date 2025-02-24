@@ -56,6 +56,7 @@ export default async function Page() {
           {[
             { href: "/about", label: "About me" },
             { href: "/work", label: "My projects" },
+            { href: "/sign", label: "Sign My Guestbook" },
             { href: "/contact", label: "Contact me" },
           ].map((link, index) => {
             return (
