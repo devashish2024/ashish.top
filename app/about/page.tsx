@@ -94,6 +94,16 @@ export default function Page() {
           projects in the future. 🚀
         </p>
         <p className="text-lg">
+          If you appreciate my work and accomplishments, I just wish you to
+          write your review and sign on my guestbook about me or my website. I
+          would love to hear from you! ❤️{" "}
+          <ActionLink
+            className="inline-flex justify-start mt-0"
+            label="Sign on Guestbook"
+            href="/sign"
+          />
+        </p>
+        <p className="text-lg">
           This is still not the end. I'm still learning and actively applying
           for new jobs, internships and contracts. If you have any opportunity
           for me, please let me know. I'm always ready to learn and work. 🤝{" "}
