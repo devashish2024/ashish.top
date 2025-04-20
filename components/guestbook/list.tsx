@@ -62,7 +62,14 @@ const EntryList: React.FC = () => {
   return (
     <div className="space-y-4 mt-8">
       {entries.map((entry: GuestEntry, i) => (
-        <Card key={i}>
+        <Card
+          key={i}
+          className={
+            entry.isOfficial
+              ? "bg-blue-600 dark:bg-blue-800 border-blue-400 dark:border-blue-600 shadow-md"
+              : ""
+          }
+        >
           <CardHeader>
             <div className="flex items-center space-x-3">
               <Avatar>
@@ -70,7 +77,11 @@ const EntryList: React.FC = () => {
                 <AvatarFallback>{entry.authorName[0]}</AvatarFallback>
               </Avatar>
               <div>
-                <CardTitle className="text-lg flex items-center gap-[6px]">
+                <CardTitle
+                  className={`text-lg flex items-center gap-[6px] ${
+                    entry.isOfficial ? "text-white" : ""
+                  }`}
+                >
                   {entry.authorName}{" "}
                   {entry.isOfficial && (
                     <TooltipProvider>
@@ -130,13 +141,22 @@ const EntryList: React.FC = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <p dangerouslySetInnerHTML={{ __html: entry.content }} />
+            <p
+              dangerouslySetInnerHTML={{ __html: entry.content }}
+              className={entry.isOfficial ? "text-white" : ""}
+            />
             <div>
               {entry?.edited && (
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger className="block">
-                      <p className="text-sm text-muted-foreground mt-2">
+                      <p
+                        className={`text-sm mt-2 ${
+                          entry.isOfficial
+                            ? "text-white/80"
+                            : "text-muted-foreground"
+                        }`}
+                      >
                         Edited{" "}
                         {formatDistanceToNow(new Date(entry.updatedAt), {
                           addSuffix: true,
@@ -160,7 +180,7 @@ const EntryList: React.FC = () => {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger className="block">
-                    <p className="text-sm text-muted-foreground mt-2">
+                    <p className={`text-sm mt-2 ${entry.isOfficial ? "text-white/80" : "text-muted-foreground"}`}>
                       {formatDistanceToNow(new Date(entry.createdAt), {
                         addSuffix: true,
                       })}

@@ -42,11 +42,19 @@ export const isGood = async (text: string): Promise<boolean | null> => {
 
 export const fetchEntries = async () => {
   try {
-    const entries: GuestEntry[] = await prisma.guestEntry.findMany({
+    let entries: GuestEntry[] = await prisma.guestEntry.findMany({
       orderBy: {
         updatedAt: "desc",
       },
     });
+
+    // Promote author, my own entry to the top
+    const entry = entries.find(entry => entry.authorName === "Ashish Agarwal");
+    if (entry) {
+      entries = entries.filter(entry => entry.authorName !== "Ashish Agarwal");
+      entries.unshift(entry);
+    }
+
     return entries;
   } catch (error) {
     console.error("Error fetching entries:", error);
