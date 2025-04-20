@@ -27,7 +27,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button className="w-full text-white dark:text-white" disabled={pending}>
+    <Button className="w-full text-white dark:text-black" disabled={pending}>
       {pending ? "Sending..." : "Send Message"}
       <Send className="ml-2 h-4 w-4" />
     </Button>
