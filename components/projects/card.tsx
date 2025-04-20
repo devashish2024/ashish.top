@@ -35,7 +35,8 @@ export function ProjectCard({ project }: { project: Project }) {
         </Card>
       </DialogTrigger>
       <DialogContent className="max-w-5xl w-11/12 h-[90vh] p-0 outline-none">
-        <div className="relative hidden md:block w-full h-24 md:h-60">
+      <ProjectModal project={project} />
+        {/* <div className="relative hidden md:block w-full h-24 md:h-60">
           <Image
             src={project.image || "/placeholder.svg"}
             alt={project.title}
@@ -45,7 +46,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="overflow-y-scroll">
           <ProjectModal project={project} />
-        </div>
+        </div> */}
       </DialogContent>
     </Dialog>
   );
