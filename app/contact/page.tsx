@@ -2,11 +2,10 @@
 
 import avatarImage from "@/public/assets/avatar.png";
 import Image from "next/image";
-import ActionLink from "@/components/ui/actionlink";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { Mail, Send } from "lucide-react";
 import { Label } from "@/components/ui/label";
@@ -22,6 +21,7 @@ import { useState } from "react";
 import { useFormStatus } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
+import { isGood } from "@/lib/sign";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -39,6 +39,28 @@ export default function Page() {
   const { toast } = useToast();
 
   async function handleSubmit(formData: FormData) {
+    const message = formData.get("message") as string;
+
+    const isAppropriate = await isGood(message);
+
+    if (isAppropriate === null) {
+      toast({
+        title: "Error",
+        description: "Failed to validate message. Please try again later.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!isAppropriate) {
+      toast({
+        title: "Message Rejected",
+        description: "Your message was flagged for inappropriate content. Please revise and try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     const result = await postContactEmail(formData);
     if (result) {
       toast({
