@@ -44,7 +44,7 @@ export default async function Page() {
         <div className="space-y-6">
           <div className="space-y-2">
             <div className="text-2xl font-semibold font-serif">Experience</div>
-            <p className="text-sm">Past work experiences</p>
+            <p className="text-sm">My work experience</p>
           </div>
           <WorkExperience experiences={experiences} />
         </div>

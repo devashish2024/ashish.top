@@ -9,12 +9,12 @@ export type Experience = {
 
 const experiences: Experience[] = [
   {
-    title: "Frontend Developer Intern",
-    company: "Beyondriffs",
+    title: "MERN Developer Intern",
+    company: "The Entrepreneurship Network",
     location: "Remote",
-    period: "Oct 2024 - Present",
+    period: "April 2024 - Present",
     description:
-      "Improved the website's SEO, added nice features and improved design.",
+      "Collaborating daily with other interns and working on a variety of projects with the MERN stack.",
     isCurrent: true,
   },
   {

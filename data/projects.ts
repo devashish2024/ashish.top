@@ -2,6 +2,73 @@ import { Project } from "@/components/projects/modal";
 
 export const projects: Project[] = [
   {
+    title: "Pulse Client",
+    description: "Full-stack website for a paid minecraft cheating solution having a large community of over 2k+ members and growing!",
+    tags: [
+      "React",
+      "Next.js",
+      "TailwindCSS",
+      "Web Development",
+      "Framer Motion",
+      "Clerk",
+      "Postgres",
+      "Prisma",
+    ],
+    image: "/assets/projects/pulse.png",
+    detailedInfo:
+      "Pulse Client is a paid Minecraft cheating solution that offers a range of features and functionalities. The website serves as a platform for users to manage the client, check their subscription, update IP, username, email, hardware ID and more.",
+    myRole: "Web Developer",
+    myRoleDetailed:
+      "Solely built the complete website on both sides: frontend and backend.\n\nImplemented authentication with Clerk, Prisma with Neon Postgres for database, and Next.js for the most.\n\nAdded nice features and coded APIs to let the application communicate with the website.",
+    involvedTech: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Clerk",
+      "Postgres",
+      "Prisma",
+    ],
+    links: [
+      {
+        label: "Demo",
+        url: "https://pulseclient.cc",
+        type: "url",
+      },
+      {
+        label: "Discord",
+        url: "https://discord.gg/HBhRh694Bh",
+        type: "discord",
+      },
+    ],
+    date: "March 25, 2025",
+  },
+  {
+    title: "Walecz Ghost",
+    description: "Built a complete website for a popular minecraft and CS2 cheat, with a large community of over 10k+ members.",
+    tags: ["React", "TailwindCSS", "Framer Motion", "Web Development"],
+    image: "/assets/projects/walecz-ghost.png",
+    detailedInfo:
+      "Walecz Ghost is a popular, free minecraft auto clicker and CS2 cheat which is used by many players. Our discord community has over 10k+ members and we have more than 500 customers who are enjoying our premium, paid clicker as well.",
+    myRole: "Web Developer",
+    myRoleDetailed:
+      "Solely worked on the complete website, including the design and animations.",
+    involvedTech: ["React", "Tailwind CSS", "Framer Motion"],
+    links: [
+      {
+        label: "Demo",
+        url: "https://waleczghost.com",
+        type: "url",
+      },
+      {
+        label: "Discord",
+        url: "https://discord.gg/7kppf2fWXK",
+        type: "discord",
+      },
+    ],
+    date: "Jan 17, 2025",
+  },
+  {
     title: "Portfolio v2",
     description:
       "Second, modern version of my Next.js portfolio, featuring a guestbook, blog, and detailed information about me.",
@@ -12,7 +79,7 @@ export const projects: Project[] = [
     involvedTech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     myRole: "Developer",
     myRoleDetailed:
-      "Developed the UI/UX, implemented a guestbook and blog system, and optimized animations and page transitions.",
+      "Solely developed the whole website on both sides: frontend and backend.\n\nImplemented authentication and guestbook, contact form, blog and much more. Also prevented inapportiate user content by using Perspective API.",
     links: [
       {
         label: "Demo",
@@ -52,7 +119,7 @@ export const projects: Project[] = [
     ],
     myRole: "Web Developer",
     myRoleDetailed:
-      "In this project, I worked on the both sides of the website, the front-end and the back-end. All my contributions were to the website and not the actual minecraft mod.\n\nI also implemented some features that were used in the actual mod like (i.) Configs API for the mod and (ii.) Scripts API for the mod",
+      "Solely built the complete frontend + backend, combining design and logic. Implemented authentication with NextAuth.js, Configs API + uploading system, scripting playground and more.\n\nI also worked on all of the frontend in this website, solely. Also made some API routes where the mod can communicate with the website.",
     links: [
       {
         label: "Demo",
@@ -73,43 +140,17 @@ export const projects: Project[] = [
     date: "July 25, 2024",
   },
   {
-    title: "MusicMaster Landing Page",
+    title: "Supercord Discord Bot",
     description:
-      "Landing page built with Next.js, Framer Motion, and TailwindCSS. Created in <2hours as a task for an internship application at Beyondriffs.",
-    tags: ["Next.js", "Framer Motion", "Tailwind CSS", "Web Development"],
-    image: "/assets/projects/musicmaster.png",
-    detailedInfo:
-      "MusicMaster is a landing page developed using Next.js, Framer Motion, and TailwindCSS. The project was designed as part of an internship application at Beyondriffs, showcasing smooth animations, a modern UI, and responsive design.\n\nI did not put too much designs in it and it was made in just nearly 2 hours or less.",
-    involvedTech: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    myRole: "Developer",
-    myRoleDetailed:
-      "Developed the entire landing page, focusing on UI design, animations, and responsiveness.",
-    links: [
-      {
-        label: "Demo",
-        url: "https://musicmastersite.vercel.app/",
-        type: "url",
-      },
-      {
-        label: "Source",
-        url: "https://github.com/devashish2024/musicmaster",
-        type: "source",
-      },
-    ],
-    date: "Sep 19, 2024",
-  },
-  {
-    title: "Supercord (Verified Discord Bot)",
-    description:
-      "A verified, fun, and general-purpose Discord bot, serving as an alternative to Dank Memer with 100+ servers and 15k+ users. (RESIGNED)",
-    tags: ["Python", "Discord Bots", "AI", "Fun Bot"],
+      "A verified, fun, and general-purpose Discord bot, serving as an alternative to Dank Memer with 100+ servers and 15k+ users.",
+    tags: ["Python", "Discord Bots"],
     image: "/assets/projects/supercord.png",
     detailedInfo:
-      "Supercord is a powerful, multipurpose Discord bot that provides entertainment, economy, and utility commands. It is verified by Discord and used across 100+ servers with over 15,000 users.",
-    involvedTech: ["Python", "Discord.py", "Postgres", "Jishaku"],
+      "Supercord is a powerful, multipurpose Discord bot that provides entertainment, economy, and utility commands. It's a verified discord bot used across 100+ servers by over 15,000 users.",
+    involvedTech: ["Python", "discord.py", "Postgres", "Debugging"],
     myRole: "Bot Developer",
     myRoleDetailed:
-      "Developed and maintained core functionalities, including currency systems, mini-games, and administrative tools.",
+      "Developed and maintained core functionalities, including currency systems, mini-games, and administrative tools.\n\nI've stopped working on Supercord since March 2024.",
     links: [
       {
         label: "Website",
@@ -122,33 +163,7 @@ export const projects: Project[] = [
         type: "discord",
       },
     ],
-    date: "March, 2024 (resigned)",
-  },
-  {
-    title: "Periodic Table Visualizer & SVG Generator",
-    description:
-      "A periodic table visualizer and SVG generator. Uses Python to generate SVGs and HTML, CSS, and JS for visualization.",
-    tags: ["Python", "SVG", "Web Development"],
-    image: "/assets/projects/periodictable.png",
-    detailedInfo:
-      "This project allows users to visualize periodic table elements dynamically. SVGs for each element are generated using Python's svgwrite library and rendered on the web with HTML, CSS, and JavaScript.",
-    involvedTech: ["Python", "svgwrite", "HTML", "CSS", "JavaScript"],
-    myRole: "Developer",
-    myRoleDetailed:
-      "Created the complete SVG generator using Python and implemented a web-based viewer for interactive exploration.",
-    links: [
-      {
-        label: "Demo",
-        url: "https://vortexprime24.github.io/periodic-table/",
-        type: "url",
-      },
-      {
-        label: "Source",
-        url: "https://github.com/vortexprime24/periodic-table",
-        type: "source",
-      },
-    ],
-    date: "Dec 11, 2024",
+    date: "September, 2023",
   },
   {
     title: "Portfolio v1",
@@ -158,10 +173,16 @@ export const projects: Project[] = [
     image: "/assets/projects/portfolio-v1.png",
     detailedInfo:
       "Portfolio v1 was my initial attempt at building a personal portfolio. It highlights my projects and skills with an interactive, animated layout.",
-    involvedTech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    involvedTech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "NextAuth",
+      "Firestore",
+    ],
     myRole: "Developer",
     myRoleDetailed:
-      "Designed and built the entire portfolio, focusing on performance, animations, and responsive design.",
+      "Solely built the complete portfolio, involving both frontend and backend. Contact form, guestbook, design, authentication, database and everything.",
     links: [
       {
         label: "Demo",
