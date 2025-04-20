@@ -2,7 +2,7 @@ import { Project } from "@/components/projects/modal";
 
 export const projects: Project[] = [
   {
-    title: "Pulse Client",
+    title: "(Contract) Pulse Client",
     description: "Full-stack website for a paid minecraft cheating solution having a large community of over 2k+ members and growing!",
     tags: [
       "React",
@@ -19,7 +19,7 @@ export const projects: Project[] = [
       "Pulse Client is a paid Minecraft cheating solution that offers a range of features and functionalities. The website serves as a platform for users to manage the client, check their subscription, update IP, username, email, hardware ID and more.",
     myRole: "Web Developer",
     myRoleDetailed:
-      "Solely built the complete website on both sides: frontend and backend.\n\nImplemented authentication with Clerk, Prisma with Neon Postgres for database, and Next.js for the most.\n\nAdded nice features and coded APIs to let the application communicate with the website.",
+      "Contractual work for 60$\n\nSolely built the complete website on both sides: frontend and backend.\n\nImplemented authentication with Clerk, Prisma with Neon Postgres for database, and Next.js for the most.\n\nAdded nice features and coded APIs to let the application communicate with the website.",
     involvedTech: [
       "React",
       "Next.js",
