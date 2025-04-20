@@ -39,9 +39,9 @@ export default function Page() {
   const { toast } = useToast();
 
   async function handleSubmit(formData: FormData) {
-    const message = formData.get("message") as string;
+    const message = formData.get("message") as string ?? "";
 
-    const isAppropriate = await isGood(message);
+    const isAppropriate = await isGood(`${formData.get('subject') as string ?? ""} - ${message}`);
 
     if (isAppropriate === null) {
       toast({
