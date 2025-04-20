@@ -60,8 +60,7 @@ export default function Page() {
         <Certifications />
         <p className="text-lg">
           Even after that, I've done an internship at Safar as an Operations
-          Intern (3-months internship) and currently working on a Frontend
-          Developer Internship at Beyondriffs (6-months internship). I've also
+          Intern (3-months internship) and currently working as a MERN Developer Intern at The Entrepreneurship Network which is a 6-months internship. I've also
           built websites for several projects and clients, including a website I
           built for the Goverment College my sister studies in. 🌐{" "}
           <ActionLink
@@ -75,7 +74,7 @@ export default function Page() {
           scale of community. Supercord, a verified discord bot with over 75+
           guilds installed and 15k+ users. ClickCrystals, a minecraft mod with
           over 150k+ downloads and 4k+ discord community. I've also contributed
-          to many more projects privately as well. ️‍🔥{" "}
+          to many more projects on contractual basis as well. ️‍🔥{" "}
           <ActionLink
             className="inline-flex justify-start mt-0"
             label="Projects"
