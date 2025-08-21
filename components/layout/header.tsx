@@ -116,9 +116,6 @@ export default function Header() {
                         className="absolute inset-0 -z-10 rounded-full bg-theme"
                       ></motion.span>
                     )}
-                        className="absolute inset-0 -z-10 rounded-full bg-theme group-hover:bg-theme/80"
-                      ></motion.span>
-                    )}
                     {link.label}
                   </Link>
                 </li>
