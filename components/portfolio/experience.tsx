@@ -6,26 +6,28 @@ type WorkExperienceProps = {
 
 export default function WorkExperience({ experiences }: WorkExperienceProps) {
   return (
-    <div className="space-y-4 my-2">
+    <div className="space-y-3">
       {experiences.map((experience, index) => (
-        <div
-          key={index}
-          className={`relative space-y-4 border p-6 ${experience.isCurrent && "border-green-300 dark:border-green-800"}`}
-        >
-          <div className="space-y-1.5">
-            <time className="block text-sm text-gray-950 dark:text-gray-400 font-serif">
-              {experience.period}
-            </time>
-            <div className={`space-y-1 text-gray-700 dark:text-gray-100`}>
-              <h3 className="font-semibold font-serif text-lg">
+        <div key={index} className="space-y-3">
+          <div className="flex items-start justify-between">
+            <div>
+              <h3 className="font-medium text-gray-900 dark:text-gray-100">
                 {experience.title}
               </h3>
-              <p className="text-sm font-medium text-gray-800 dark:text-gray-400">
-                — {experience.company} · {experience.location}
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {experience.company} · {experience.location}
               </p>
             </div>
+            <div className="flex items-center gap-2">
+              {experience.isCurrent && (
+                <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+              )}
+              <time className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                {experience.period}
+              </time>
+            </div>
           </div>
-          <p className="text-sm leading-relaxed text-gray-800 tracking-tight dark:text-gray-400 font-light">
+          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
             {experience.description}
           </p>
         </div>

@@ -5,7 +5,7 @@ export function ProjectsList({ isHome = false }: { isHome?: boolean }) {
   const featuredProjects = projects.slice(0, 4);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {isHome ? (
         <>
           {featuredProjects.map((project, i) => (

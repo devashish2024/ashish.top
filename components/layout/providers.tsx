@@ -12,9 +12,9 @@ const Providers = async ({ children }: { children: React.ReactNode }) => {
       disableTransitionOnChange
     >
       <ClerkProvider>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"></div>
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-theme via-theme/60 to-theme opacity-60"></div>
         <Header />
-        <main className="container min-h-screen" suppressHydrationWarning>
+        <main className="min-h-screen" suppressHydrationWarning>
           {children}
         </main>
         <Footer />

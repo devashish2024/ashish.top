@@ -1,107 +1,51 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import {
-  motion,
-  useAnimation,
-  useMotionValue,
-  PanInfo,
-  useDragControls,
-} from "framer-motion";
-import Image from "next/image";
-
-const DRAG_LIMIT_FACTOR = 0.5;
+const skills = [
+  { name: "React", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "TypeScript", category: "Language" },
+  { name: "JavaScript", category: "Language" },
+  { name: "Python", category: "Language" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "MongoDB", category: "Database" },
+  { name: "Docker", category: "DevOps" },
+  { name: "Git", category: "Tools" },
+  { name: "Firebase", category: "Backend" },
+  { name: "Flask", category: "Backend" },
+];
 
 export default function Skills() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [contentWidth, setContentWidth] = useState(0);
-  const x = useMotionValue(-78);
-  const controls = useAnimation();
-  const dragControls = useDragControls();
-
-  const imgUrl =
-    "https://skillicons.dev/icons?i=bash,svelte,tailwind,ts,js,react,nextjs,py,nodejs,discordjs,docker,electron,figma,firebase,flask,git,html,jest,jquery,kali,linux,bootstrap,mongodb,md,npm,r,yarn&perline=50";
-
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (containerRef.current && contentRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-        setContentWidth(contentRef.current.scrollWidth);
-      }
-    };
-
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-  ) => {
-    const currentX = x.get();
-    const minX = -contentWidth + containerWidth;
-    const maxX = 0;
-    const dragLimit = containerWidth * DRAG_LIMIT_FACTOR;
-
-    let newX = currentX + info.offset.x;
-    newX = Math.max(Math.min(newX, dragLimit), minX - dragLimit);
-
-    controls.start({
-      x: newX,
-      transition: { type: "spring", stiffness: 400, damping: 30 },
-    });
-  };
-
-  const handleDrag = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-  ) => {
-    const currentX = x.get();
-    const minX = -contentWidth + containerWidth;
-    const maxX = 0;
-    const dragLimit = containerWidth * DRAG_LIMIT_FACTOR;
-
-    let newX = currentX + info.delta.x;
-    newX = Math.max(Math.min(newX, dragLimit), minX - dragLimit);
-
-    x.set(newX);
-  };
+  const categories = [...new Set(skills.map(skill => skill.category))];
 
   return (
-    <div className="relative py-4">
-      <div ref={containerRef} className="relative overflow-hidden">
-        {/* Mask gradients */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white/90 dark:from-zinc-950 to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white/90 dark:from-zinc-950 to-transparent z-10" />
-
-        <motion.div
-          ref={contentRef}
-          className="flex whitespace-nowrap cursor-grab active:cursor-grabbing"
-          style={{ x }}
-          drag="x"
-          dragControls={dragControls}
-          onDrag={handleDrag}
-          onDragEnd={handleDragEnd}
-          animate={controls}
-          dragElastic={0.1}
-          dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-        >
-          <div className="flex shrink-0">
-            <Image
-              src={imgUrl}
-              alt="Technology Icons"
-              width={1556}
-              height={48}
-              className="h-12 w-auto brightness-110 select-none"
-              priority
-              draggable="false"
-            />
+    <section className="py-8">
+      <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-8">
+        Technologies & Skills
+      </h2>
+      
+      <div className="space-y-6">
+        {categories.map(category => (
+          <div key={category}>
+            <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wider">
+              {category}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {skills
+                .filter(skill => skill.category === category)
+                .map(skill => (
+                  <span 
+                    key={skill.name}
+                    className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full border border-gray-200 dark:border-gray-700 hover:border-theme transition-colors"
+                  >
+                    {skill.name}
+                  </span>
+                ))
+              }
+            </div>
           </div>
-        </motion.div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }

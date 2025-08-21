@@ -13,29 +13,29 @@ export default function InterviewList({
   priority,
 }: InterviewListProps) {
   return (
-    <ul className="animated-list --mx-4 md:-mx-6 flex flex-col md:flex-row snap-x snap-mandatory scroll-pl-6 grid-cols-2 flex-nowrap gap-9 overflow-x-scroll px-6 md:grid md:overflow-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {interviews.map((interview: string) => (
-        <li
-          key={interview}
-          className="col-span-1 min-w-60 snap-start transition-opacity"
+        <Link 
+          key={interview} 
+          href={interview} 
+          target="_blank"
+          className="group block"
         >
-          <Link href={interview} className="space-y-4" target="_blank">
-            <div className="aspect-video overflow-hidden rounded-md bg-secondary">
-              <Halo strength={10}>
-                <Image
-                  draggable={false}
-                  src={`https://img.youtube.com/vi/${interview.split("v=")[1]}/0.jpg`}
-                  alt="Interview"
-                  width={1280}
-                  height={720}
-                  className="w-full object-cover h-full"
-                  priority={priority}
-                />
-              </Halo>
-            </div>
-          </Link>
-        </li>
+          <div className="aspect-video overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-theme transition-colors">
+            <Halo strength={10}>
+              <Image
+                draggable={false}
+                src={`https://img.youtube.com/vi/${interview.split("v=")[1]}/0.jpg`}
+                alt="Interview"
+                width={1280}
+                height={720}
+                className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+                priority={priority}
+              />
+            </Halo>
+          </div>
+        </Link>
       ))}
-    </ul>
+    </div>
   );
 }
