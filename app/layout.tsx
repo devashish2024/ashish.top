@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     "computer boy",
   ],
   authors: [{ name: "Ashish Agarwal" }],
+  other: {
+    "google-adsense-account": "ca-pub-1002298090292560",
+  },
 };
 
 export default function RootLayout({
@@ -41,12 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-     <head>
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-1002298090292560"
-        />
-      </head>
+     </head>
       <body className={`${sans.variable} ${sansSerif.variable}`}>
         <Providers>{children}</Providers>
       </body>
