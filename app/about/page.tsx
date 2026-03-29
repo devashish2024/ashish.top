@@ -11,8 +11,8 @@ import {
 
 export default function Page() {
   return (
-    <div className="container px-4 mb-12 mt-2 md:mt-4 space-y-4 min-h-screen">
-      <Breadcrumb>
+    <div className="container px-4 mb-16 mt-8 md:mt-12 max-w-4xl mx-auto">
+      <Breadcrumb className="mb-8">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -23,95 +23,94 @@ export default function Page() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <div className="space-y-4">
+
+      <div className="space-y-12">
+        <section>
+          <h1 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-8">
+            About Me
+          </h1>
+          <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 space-y-6">
+            <p className="text-xl leading-relaxed">
+              Hi there! I'm Ashish Agarwal, a 13-year-old self-taught web developer from Aligarh, India. 
+              I've been passionate about coding since I was 8 years old and love building innovative web applications.
+            </p>
+            <p>
+              Over the years, my work has gained recognition across various media outlets. 
+              I've been featured in magazines, articles, and news channels, earning the title 
+              "Computer Boy of Aligarh" for my dedication and achievements in technology.
+            </p>
+          </div>
+        </section>
+
         <Skills />
-        <p className="text-lg">
-          Hi there! 👋 I'm Ashish Agarwal, a 13-year-old self-taught and
-          accomplished web developer from Aligarh, India. Currently a class 8th
-          student, I’ve been passionate about coding since I was just 8 years
-          old. I love building innovative web applications and crafting
-          beautiful designs, bringing my ideas to life through code. 💻
-        </p>
-        <p className="text-lg">
-          Over the years, my work and skills have been recognized widely. I've
-          been interviewed and featured in various magazines, articles, and news
-          channels thanks to my dedication and the unwavering support of my
-          parents. The media has even dubbed me the "computer boy of Aligarh."
-          You can search for my interviews on Google to learn more about my
-          journey! 🚀{" "}
-          <ActionLink
-            className="inline-flex justify-start mt-0"
-            label="Interviews"
-            href="/interviews"
-          />
-        </p>
-        <p className="text-lg">
-          I’ve explored and mastered a range of technologies, from JavaScript,
-          TypeScript, and Python to frameworks and tools like React, Next.js,
-          TailwindCSS, Framer Motion, Supabase, and Firebase. I’ve also earned 4
-          professional certifications on Coursera to further solidify my
-          expertise. I’m passionate about building pixel-perfect, responsive,
-          and dynamic web designs that deliver an exceptional user experience.
-          🎨
-        </p>
-        <p className="text-lg">
-          List of professional certificates I've completed by 2025:
-        </p>
-        <Certifications />
-        <p className="text-lg">
-          Even after that, I've done an internship at Safar as an Operations
-          Intern (3-months internship) and currently working as a MERN Developer Intern at The Entrepreneurship Network which is a 6-months internship. I've also
-          built websites for several projects and clients, including a website I
-          built for the Goverment College my sister studies in. 🌐{" "}
-          <ActionLink
-            className="inline-flex justify-start mt-0"
-            label="Work"
-            href="/work"
-          />
-        </p>
-        <p className="text-lg">
-          I've also contributed to some large projects which involve a large
-          scale of community. Supercord, a verified discord bot with over 75+
-          guilds installed and 15k+ users. ClickCrystals, a minecraft mod with
-          over 150k+ downloads and 4k+ discord community. I've also contributed
-          to many more projects on contractual basis as well. ️‍🔥{" "}
-          <ActionLink
-            className="inline-flex justify-start mt-0"
-            label="Projects"
-            href="/work"
-          />
-        </p>
-        <p className="text-lg">
-          Last but not least, I've also authored a total of 9 books related to
-          programming! All of them are available for purchase on Google Play
-          Books, go ahead and buy them now! 📚
-        </p>
-        <p className="text-lg">
-          So far, this is an incredible list of achievements for a 13-year old
-          kid like me. I'm proud of myself and my parents are proud of me too.
-          I'm looking forward to learning more and building more amazing
-          projects in the future. 🚀
-        </p>
-        <p className="text-lg">
-          If you appreciate my work and accomplishments, I just wish you to
-          write your review and sign on my guestbook about me or my website. I
-          would love to hear from you! ❤️{" "}
-          <ActionLink
-            className="inline-flex justify-start mt-0"
-            label="Sign on Guestbook"
-            href="/sign"
-          />
-        </p>
-        <p className="text-lg">
-          This is still not the end. I'm still learning and actively applying
-          for new jobs, internships and contracts. If you have any opportunity
-          for me, please let me know. I'm always ready to learn and work. 🤝{" "}
-          <ActionLink
-            className="inline-flex justify-start mt-0"
-            label="Contact me"
-            href="/contact"
-          />
-        </p>
+
+        <section>
+          <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-6">
+            Professional Experience
+          </h2>
+          <div className="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              I've completed an internship at Safar as an Operations Intern and am currently 
+              working as a MERN Developer Intern at The Entrepreneurship Network.
+            </p>
+            <p>
+              I've contributed to large-scale community projects including Supercord 
+              (a Discord bot with 75+ guilds and 15k+ users) and ClickCrystals 
+              (a Minecraft mod with 150k+ downloads and 4k+ community members).
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-6">
+            Certifications
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+            I've earned professional certifications to solidify my expertise:
+          </p>
+          <Certifications />
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-6">
+            Published Works
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300">
+            I've authored 9 books on programming, all available on Google Play Books.
+          </p>
+        </section>
+
+        <section className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-8 border border-gray-200 dark:border-gray-800">
+          <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-4">
+            Let's Connect
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+            I'm always learning and looking for new opportunities. 
+            Feel free to reach out if you'd like to collaborate or just say hello!
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <ActionLink 
+              href="/work" 
+              label="View My Work" 
+              className="text-theme hover:underline"
+            />
+            <ActionLink 
+              href="/highlights" 
+              label="Media Features" 
+              className="text-theme hover:underline"
+            />
+            <ActionLink 
+              href="/sign" 
+              label="Sign Guestbook" 
+              className="text-theme hover:underline"
+            />
+            <ActionLink 
+              href="/contact" 
+              label="Contact Me" 
+              className="text-theme hover:underline"
+            />
+          </div>
+        </section>
       </div>
     </div>
   );

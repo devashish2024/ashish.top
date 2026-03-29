@@ -71,33 +71,33 @@ export default function Header() {
       >
         <div className="flex items-center justify-between md:justify-center">
           <Link
-            className="text-theme text-2xl font-semibold md:hidden font-mono"
+            className="text-theme text-xl font-medium md:hidden"
             href="/"
           >
-            {"<Ashish />"}
+            Ashish
           </Link>
           <SheetTrigger className="md:hidden">
-            <div className="flex items-center justify-center p-1.5 rounded-full border">
-              <Equal className="text-theme h-6 w-6" />
+            <div className="flex items-center justify-center p-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+              <Equal className="text-gray-600 dark:text-gray-400 h-5 w-5" />
             </div>
           </SheetTrigger>
           <nav
-            className="hidden md:flex items-center gap-2 rounded-full shadow ring-1 ring-gray-400/30 backdrop-blur-md dark:ring-accent/50 py-2 px-4 max-w-2xl bg-white/40 dark:bg-black/40"
+            className="hidden md:flex items-center gap-1 rounded-full shadow-sm ring-1 ring-gray-200 dark:ring-gray-700 backdrop-blur-sm py-2 px-3 bg-white/80 dark:bg-gray-950/80"
             suppressHydrationWarning
           >
-            <ul className="gap-x-2 text-sm font-medium flex">
+            <ul className="gap-x-1 text-sm font-medium flex">
               {links.map((link, index) => (
                 <li
                   key={index}
-                  className="transition-transform duration-100 hover:scale-[1.1] my-3"
+                  className="transition-transform duration-200 hover:scale-[1.02]"
                 >
                   <Link
                     href={link.href}
                     scroll={true}
-                    className={`group relative rounded-full px-3 py-2 transition-colors duration-200 ${
+                    className={`group relative rounded-full px-4 py-2 transition-colors duration-200 ${
                       isActive(link.href)
-                        ? "font-semibold text-background dark:hover:text-foreground"
-                        : "text-foreground"
+                        ? "text-white dark:text-gray-900"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
                     }`}
                   >
                     {isActive(link.href) && (
@@ -113,7 +113,7 @@ export default function Header() {
                             },
                           },
                         }}
-                        className="absolute inset-0 -z-10 rounded-full bg-theme group-hover:bg-theme/80"
+                        className="absolute inset-0 -z-10 rounded-full bg-theme"
                       ></motion.span>
                     )}
                     {link.label}

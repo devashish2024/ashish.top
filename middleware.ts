@@ -1,7 +1,7 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+// import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-export default clerkMiddleware(async (auth, req) => {
+export default function middleware(req: any) {
   const url = new URL(req.url);
 
   switch (url.pathname) {
@@ -30,7 +30,7 @@ export default clerkMiddleware(async (auth, req) => {
     default:
       return NextResponse.next();
   }
-});
+}
 
 export const config = {
   matcher: [
