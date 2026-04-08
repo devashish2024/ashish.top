@@ -21,6 +21,21 @@ export default function Footer() {
             Open-source portfolio.
           </Link>
         </p>
+        <div className="flex gap-3 text-xs font-serif">
+          <Link
+            href="/privacy"
+            className="hover:underline underline-offset-2 hover:text-theme transition-all duration-75"
+          >
+            Privacy Policy
+          </Link>
+          <span className="text-gray-300 dark:text-gray-600">|</span>
+          <Link
+            href="/terms"
+            className="hover:underline underline-offset-2 hover:text-theme transition-all duration-75"
+          >
+            Terms of Service
+          </Link>
+        </div>
         <RepoStats />
       </div>
     </footer>
