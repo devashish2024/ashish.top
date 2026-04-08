@@ -44,7 +44,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-     </head>
       <body className={`${sans.variable} ${sansSerif.variable}`}>
         <Providers>{children}</Providers>
       </body>
