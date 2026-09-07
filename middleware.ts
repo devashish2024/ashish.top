@@ -15,6 +15,8 @@ export default clerkMiddleware(async (auth, req) => {
       return NextResponse.redirect(new URL("/highlights", req.url));
     case "/guestbook":
       return NextResponse.redirect(new URL("/sign", req.url));
+    case "/tracker":
+      return NextResponse.redirect("https://mobs.ashish.top/tracker", 308);
     case "/s/v1":
       return NextResponse.redirect("https://v1.ashish.top");
     case "/s/gh":
@@ -42,6 +44,7 @@ export const config = {
     "/home",
     "/interviews",
     "/guestbook",
+    "/tracker",
     "/s/v1",
     "/s/gh",
     "/s/gh2",
